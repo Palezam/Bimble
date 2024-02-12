@@ -1,0 +1,9 @@
+{
+  "parent": "bimble:custom/eggmodel",
+  "textures": {
+    "all": "bimble:block/egg_texture",
+    "particle": "bimble:block/eggbreaktexture",
+    "0": "bimble:block/egg_texture"
+  },
+  "render_type": "solid"
+}

@@ -1,0 +1,7 @@
+
+{
+  "parent": "bimble:displaysettings/recycler.item",
+  "textures": {
+    "particle": "bimble:block/recycler"
+  }
+}

@@ -1,0 +1,80 @@
+{
+  "_fv": 47,
+  "_type": "gui",
+  "definition": {
+    "type": 0,
+    "width": 176,
+    "height": 166,
+    "inventoryOffsetX": 0,
+    "inventoryOffsetY": 0,
+    "renderBgLayer": true,
+    "doesPauseGame": false,
+    "components": [
+      {
+        "type": "button",
+        "data": {
+          "name": "button_buy",
+          "text": "Buy",
+          "onClick": {
+            "name": "BuyApple"
+          },
+          "width": 40,
+          "height": 20,
+          "x": 131,
+          "y": 60
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_apple",
+          "text": {
+            "fixedValue": "32x Kompeitō (6x Solari)"
+          },
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "x": 132,
+          "y": 48
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_1x_double_barrel",
+          "text": {
+            "fixedValue": "1x Double Barrel (64x Solari)"
+          },
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "x": 132,
+          "y": 82
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_buy1",
+          "text": "Buy",
+          "onClick": {
+            "name": "BuyDoubleBarrel"
+          },
+          "width": 40,
+          "height": 20,
+          "x": 131,
+          "y": 93
+        }
+      }
+    ],
+    "gridSettings": {
+      "sx": 18,
+      "sy": 18,
+      "ox": 11,
+      "oy": 15,
+      "snapOnGrid": false
+    }
+  }
+}

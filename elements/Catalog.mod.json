@@ -1,0 +1,148 @@
+{
+  "_fv": 47,
+  "_type": "gui",
+  "definition": {
+    "type": 0,
+    "width": 176,
+    "height": 127,
+    "inventoryOffsetX": 0,
+    "inventoryOffsetY": 0,
+    "renderBgLayer": true,
+    "doesPauseGame": false,
+    "components": [
+      {
+        "type": "image",
+        "data": {
+          "image": "hub.png",
+          "use1Xscale": true,
+          "x": 64,
+          "y": 38
+        }
+      },
+      {
+        "type": "imagebutton",
+        "data": {
+          "name": "imagebutton_shopnotselected",
+          "image": "shopnotselected.png",
+          "hoveredImage": "shopselected.png",
+          "onClick": {
+            "name": "StoreButtonPressed"
+          },
+          "x": 87,
+          "y": 117
+        }
+      },
+      {
+        "type": "imagebutton",
+        "data": {
+          "name": "imagebutton_convertnotselected",
+          "image": "convertnotselected.png",
+          "hoveredImage": "convertselected.png",
+          "x": 87,
+          "y": 137
+        }
+      },
+      {
+        "type": "imagebutton",
+        "data": {
+          "name": "imagebutton_infonotselected",
+          "image": "infonotselected.png",
+          "hoveredImage": "infoselected.png",
+          "x": 87,
+          "y": 157
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "friday.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "FridayDisplay"
+          },
+          "x": 141,
+          "y": 81
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "wednesday.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "WednesDayDisplay"
+          },
+          "x": 141,
+          "y": 81
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "sunday.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "SundayDisplay"
+          },
+          "x": 141,
+          "y": 81
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "tuesday.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "TuesdayDisplay"
+          },
+          "x": 141,
+          "y": 81
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "monday.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "MondayDisplay"
+          },
+          "x": 141,
+          "y": 81
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "thursday.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "ThursdayDisplay"
+          },
+          "x": 141,
+          "y": 81
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "saturday.png",
+          "use1Xscale": true,
+          "displayCondition": {
+            "name": "SaturdayDisplay"
+          },
+          "x": 141,
+          "y": 81
+        }
+      }
+    ],
+    "gridSettings": {
+      "sx": 24,
+      "sy": 24,
+      "ox": 11,
+      "oy": 15,
+      "snapOnGrid": false
+    }
+  }
+}

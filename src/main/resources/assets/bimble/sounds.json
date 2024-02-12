@@ -1,0 +1,65 @@
+{
+  "dronedeliver": {
+    "subtitle": "subtitles.dronedeliver",
+    "sounds": [
+      {
+        "name": "bimble:dronedeliver",
+        "stream": false
+      }
+    ]
+  },
+  "thecompanythanksyouforyourservice": {
+    "subtitle": "subtitles.thecompanythanksyouforyourservice",
+    "sounds": [
+      {
+        "name": "bimble:the_company_thanks_you",
+        "stream": false
+      }
+    ]
+  },
+  "bimblethanksyou": {
+    "subtitle": "subtitles.bimblethanksyou",
+    "sounds": [
+      {
+        "name": "bimble:bimble_thanks_you_for_your_service",
+        "stream": false
+      }
+    ]
+  },
+  "enjoy_your_gun": {
+    "subtitle": "subtitles.enjoy_your_gun",
+    "sounds": [
+      {
+        "name": "bimble:enjoy_your_gun",
+        "stream": false
+      }
+    ]
+  },
+  "ripandtear": {
+    "subtitle": "subtitles.ripandtear",
+    "sounds": [
+      {
+        "name": "bimble:rip_and_tear",
+        "stream": false
+      }
+    ]
+  },
+  "it_is_said_to_lure_creatures": {
+    "subtitle": "subtitles.it_is_said_to_lure_creatures",
+    "sounds": [
+      {
+        "name": "bimble:it_is_said_to_lure_creatures",
+        "stream": false
+      }
+    ]
+  },
+  "thankyouforyourservice": {
+    "subtitle": "subtitles.thankyouforyourservice",
+    "sounds": [
+      {
+        "name": "bimble:thank_you_for_your_service",
+        "stream": false
+      }
+    ]
+  }
+}

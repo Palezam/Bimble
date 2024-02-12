@@ -1,0 +1,1356 @@
+{
+  "mod_elements": [
+    {
+      "name": "Catalog",
+      "type": "gui",
+      "sortid": 2,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "catalog",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/bimble/network/CatalogButtonMessage.java",
+          "src/main/java/net/mcreator/bimble/world/inventory/CatalogMenu.java",
+          "src/main/java/net/mcreator/bimble/client/gui/CatalogScreen.java"
+        ]
+      }
+    },
+    {
+      "name": "CatalogConsole",
+      "type": "item",
+      "sortid": 1,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "catalog_console",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/bimble/item/CatalogConsoleItem.java",
+          "src/main/resources/assets/bimble/models/item/catalog_console.json"
+        ]
+      }
+    },
+    {
+      "name": "Store",
+      "type": "gui",
+      "sortid": 4,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "store",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/bimble/client/gui/StoreScreen.java",
+          "src/main/java/net/mcreator/bimble/network/StoreButtonMessage.java",
+          "src/main/java/net/mcreator/bimble/world/inventory/StoreMenu.java"
+        ]
+      }
+    },
+    {
+      "name": "Drone",
+      "type": "animatedentity",
+      "sortid": 5,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "drone",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/bimble/models/item/drone_spawn_egg.json",
+          "src/main/java/net/mcreator/bimble/entity/model/DroneModel.java",
+          "src/main/java/net/mcreator/bimble/entity/DroneEntity.java",
+          "src/main/java/net/mcreator/bimble/client/renderer/DroneRenderer.java"
+        ]
+      }
+    },
+    {
+      "name": "DroneEntityIsHurt",
+      "type": "procedure",
+      "sortid": 6,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "drone_entity_is_hurt",
+      "metadata": {
+        "return_type": "string",
+        "files": [
+          "src/main/java/net/mcreator/bimble/procedures/DroneEntityIsHurtProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "sourceentity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "BuyApple",
+      "type": "procedure",
+      "sortid": 7,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "buy_apple",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/bimble/procedures/BuyAppleProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "DroneRightClickedOnEntity",
+      "type": "procedure",
+      "sortid": 8,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "drone_right_clicked_on_entity",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/bimble/procedures/DroneRightClickedOnEntityProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "sourceentity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "StoreButtonPressed",
+      "type": "procedure",
+      "sortid": 9,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "store_button_pressed",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/bimble/procedures/StoreButtonPressedProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "DroneOnEntityTickUpdate",
+      "type": "procedure",
+      "sortid": 10,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "drone_on_entity_tick_update",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/bimble/procedures/DroneOnEntityTickUpdateProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "DronePlayReturnedAnimation",
+      "type": "procedure",
+      "sortid": 12,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "drone_play_returned_animation",
+      "metadata": {
+        "return_type": "string",
+        "files": [
+          "src/main/java/net/mcreator/bimble/procedures/DronePlayReturnedAnimationProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "DroneOnInitialEntitySpawn",
+      "type": "procedure",
+      "sortid": 13,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "drone_on_initial_entity_spawn",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/bimble/procedures/DroneOnInitialEntitySpawnProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "UmeEggUpdateTick",
+      "type": "procedure",
+      "sortid": 28,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "ume_egg_update_tick",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/bimble/procedures/UmeEggUpdateTickProcedure.java"
+        ],
+        "dependencies": []
+      }
+    },
+    {
+      "name": "UmeEgg",
+      "type": "block",
+      "sortid": 29,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "ume_egg",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/bimble/models/block/ume_egg.json",
+          "src/main/java/net/mcreator/bimble/block/entity/UmeEggBlockEntity.java",
+          "src/main/resources/assets/bimble/blockstates/ume_egg.json",
+          "src/main/java/net/mcreator/bimble/block/UmeEggBlock.java",
+          "src/main/resources/assets/bimble/models/item/ume_egg.json"
+        ]
+      }
+    },
+    {
+      "name": "StarCandy",
+      "type": "item",
+      "sortid": 30,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "star_candy",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/bimble/models/item/star_candy.json",
+          "src/main/java/net/mcreator/bimble/item/StarCandyItem.java"
+        ]
+      }
+    },
+    {
+      "name": "StarCandyPlayerFinishesUsingItem",
+      "type": "procedure",
+      "sortid": 31,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "star_candy_player_finishes_using_item",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/bimble/procedures/StarCandyPlayerFinishesUsingItemProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "FurnaceRightClicked",
+      "type": "procedure",
+      "sortid": 32,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "furnace_right_clicked",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/bimble/procedures/FurnaceRightClickedProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "DoubleBarrelEntitySwingsItem",
+      "type": "procedure",
+      "sortid": 34,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "double_barrel_entity_swings_item",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/bimble/procedures/DoubleBarrelEntitySwingsItemProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "itemstack",
+            "type": "itemstack"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "DoubleBarrelReloadOnKeyPressed",
+      "type": "procedure",
+      "sortid": 35,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "double_barrel_reload_on_key_pressed",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/mcreator/bimble/procedures/DoubleBarrelReloadOnKeyPressedProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "ShotgunShell",
+      "type": "item",
+      "sortid": 36,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "shotgun_shell",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/bimble/item/ShotgunShellItem.java",
+          "src/main/resources/assets/bimble/models/item/shotgun_shell.json"
+        ]
+      }
+    },
+    {
+      "name": "DoubleBarrel",
+      "type": "animateditem",
+      "sortid": 37,
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "double_barrel",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/bimble/models/item/double_barrel.json",
+          "src/main/java/net/mcreator/bimble/item/model/DoubleBarrelItemModel.java",
+          "src/main/java/net/mcreator/bimble/item/DoubleBarrelItem.java",
+          "src/main/java/net/mcreator/bimble/item/renderer/DoubleBarrelItemRenderer.java"
+        ]
+      }
+    },
+    {
+      "name": "DoubleBarrelReload",
+      "type": "keybind",
+      "sortid": 38,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "double_barrel_reload",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/bimble/network/DoubleBarrelReloadMessage.java"
+        ]
+      }
+    },
+    {
+      "name": "AmmoCountDoubleBarrel",
+      "type": "overlay",
+      "sortid": 39,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "ammo_count_double_barrel",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/bimble/client/screens/AmmoCountDoubleBarrelOverlay.java"
+        ]
+      }
+    },
+    {
+      "name": "AmmoCount0",
+      "type": "procedure",
+      "sortid": 40,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "ammo_count_0",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/mcreator/bimble/procedures/AmmoCount0Procedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "AmmoCount1",
+      "type": "procedure",
+      "sortid": 41,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "ammo_count_1",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/mcreator/bimble/procedures/AmmoCount1Procedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "AmmoCount2",
+      "type": "procedure",
+      "sortid": 42,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "ammo_count_2",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/mcreator/bimble/procedures/AmmoCount2Procedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "DBAmmoCount",
+      "type": "procedure",
+      "sortid": 43,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "db_ammo_count",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/mcreator/bimble/procedures/DBAmmoCountProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "DoubleBarrelBullets",
+      "type": "rangeditem",
+      "sortid": 44,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "double_barrel_bullets",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/bimble/models/item/double_barrel_bullets.json",
+          "src/main/java/net/mcreator/bimble/item/DoubleBarrelBulletsItem.java",
+          "src/main/java/net/mcreator/bimble/entity/DoubleBarrelBulletsEntity.java"
+        ]
+      }
+    },
+    {
+      "name": "BulletParticle",
+      "type": "procedure",
+      "sortid": 45,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "bullet_particle",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/bimble/procedures/BulletParticleProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Susuwatari",
+      "type": "animatedentity",
+      "sortid": 46,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "susuwatari",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/bimble/client/renderer/SusuwatariRenderer.java",
+          "src/main/resources/data/bimble/forge/biome_modifier/susuwatari_biome_modifier.json",
+          "src/main/java/net/mcreator/bimble/entity/model/SusuwatariModel.java",
+          "src/main/java/net/mcreator/bimble/entity/SusuwatariEntity.java",
+          "src/main/resources/assets/bimble/models/item/susuwatari_spawn_egg.json"
+        ]
+      }
+    },
+    {
+      "name": "SusuwatariOnEntityTickUpdate",
+      "type": "procedure",
+      "sortid": 47,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "susuwatari_on_entity_tick_update",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/mcreator/bimble/procedures/SusuwatariOnEntityTickUpdateProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "BowlOfSoot",
+      "type": "item",
+      "sortid": 50,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "bowl_of_soot",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/bimble/models/item/bowl_of_soot.json",
+          "src/main/java/net/mcreator/bimble/item/BowlOfSootItem.java"
+        ]
+      }
+    },
+    {
+      "name": "BowlOfSootRightclicked",
+      "type": "procedure",
+      "sortid": 52,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "bowl_of_soot_rightclicked",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/bimble/procedures/BowlOfSootRightclickedProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "SootGuyRightClicked",
+      "type": "procedure",
+      "sortid": 54,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "soot_guy_right_clicked",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/bimble/procedures/SootGuyRightClickedProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "sourceentity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Recycler",
+      "type": "animatedblock",
+      "sortid": 55,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "recycler",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/bimble/models/custom/recycler_particle.json",
+          "src/main/resources/assets/bimble/blockstates/recycler.json",
+          "src/main/java/net/mcreator/bimble/block/RecyclerBlock.java",
+          "src/main/resources/assets/bimble/models/item/recycler.json",
+          "src/main/java/net/mcreator/bimble/block/model/RecyclerDisplayModel.java",
+          "src/main/java/net/mcreator/bimble/block/entity/RecyclerTileEntity.java",
+          "src/main/java/net/mcreator/bimble/block/display/RecyclerDisplayItem.java",
+          "src/main/java/net/mcreator/bimble/block/model/RecyclerBlockModel.java",
+          "src/main/java/net/mcreator/bimble/block/renderer/RecyclerDisplayItemRenderer.java",
+          "src/main/java/net/mcreator/bimble/block/renderer/RecyclerTileRenderer.java"
+        ]
+      }
+    },
+    {
+      "name": "RecyclerEntityCollidesInTheBlock",
+      "type": "procedure",
+      "sortid": 56,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "recycler_entity_collides_in_the_block",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/bimble/procedures/RecyclerEntityCollidesInTheBlockProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "RecyclerUpdateTick",
+      "type": "procedure",
+      "sortid": 57,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "recycler_update_tick",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/bimble/procedures/RecyclerUpdateTickProcedure.java"
+        ],
+        "dependencies": []
+      }
+    },
+    {
+      "name": "RecyclerOnBlockRightClicked",
+      "type": "procedure",
+      "sortid": 58,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "recycler_on_block_right_clicked",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/bimble/procedures/RecyclerOnBlockRightClickedProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "CatalogConsoleRightclicked",
+      "type": "procedure",
+      "sortid": 59,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "catalog_console_rightclicked",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/bimble/procedures/CatalogConsoleRightclickedProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "RecyclerRecipe",
+      "type": "recipe",
+      "sortid": 60,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "recycler_recipe",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/bimble/recipes/recycler_recipe.json"
+        ]
+      }
+    },
+    {
+      "name": "CatalogConsoleRecipe",
+      "type": "recipe",
+      "sortid": 61,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "catalog_console_recipe",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/bimble/recipes/catalog_console_recipe.json"
+        ]
+      }
+    },
+    {
+      "name": "BuyDoubleBarrel",
+      "type": "procedure",
+      "sortid": 62,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "buy_double_barrel",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/bimble/procedures/BuyDoubleBarrelProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "BowlOfSootRightclickedOnBlock",
+      "type": "procedure",
+      "sortid": 63,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "bowl_of_soot_rightclicked_on_block",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/bimble/procedures/BowlOfSootRightclickedOnBlockProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "RandomVoiceLine",
+      "type": "procedure",
+      "sortid": 64,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "random_voice_line",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/bimble/procedures/RandomVoiceLineProcedure.java"
+        ],
+        "dependencies": []
+      }
+    },
+    {
+      "name": "DroneKilled",
+      "type": "procedure",
+      "sortid": 65,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "drone_killed",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/bimble/procedures/DroneKilledProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "DurabiltiyCheck",
+      "type": "procedure",
+      "sortid": 66,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "durabiltiy_check",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/bimble/procedures/DurabiltiyCheckProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "DateCheck",
+      "type": "procedure",
+      "sortid": 67,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "date_check",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/bimble/procedures/DateCheckProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/DateDisplayConditons"
+    },
+    {
+      "name": "ClockRightClick",
+      "type": "procedure",
+      "sortid": 68,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "clock_right_click",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/bimble/procedures/ClockRightClickProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/DateDisplayConditons"
+    },
+    {
+      "name": "TuesdayDisplay",
+      "type": "procedure",
+      "sortid": 69,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "tuesday_display",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/mcreator/bimble/procedures/TuesdayDisplayProcedure.java"
+        ],
+        "dependencies": []
+      },
+      "path": "~/DateDisplayConditons"
+    },
+    {
+      "name": "MondayDisplay",
+      "type": "procedure",
+      "sortid": 70,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "monday_display",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/mcreator/bimble/procedures/MondayDisplayProcedure.java"
+        ],
+        "dependencies": []
+      },
+      "path": "~/DateDisplayConditons"
+    },
+    {
+      "name": "SundayDisplay",
+      "type": "procedure",
+      "sortid": 71,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "sunday_display",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/mcreator/bimble/procedures/SundayDisplayProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/DateDisplayConditons"
+    },
+    {
+      "name": "ThursdayDisplay",
+      "type": "procedure",
+      "sortid": 72,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "thursday_display",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/mcreator/bimble/procedures/ThursdayDisplayProcedure.java"
+        ],
+        "dependencies": []
+      },
+      "path": "~/DateDisplayConditons"
+    },
+    {
+      "name": "WednesDayDisplay",
+      "type": "procedure",
+      "sortid": 73,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "wednes_day_display",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/mcreator/bimble/procedures/WednesDayDisplayProcedure.java"
+        ],
+        "dependencies": []
+      },
+      "path": "~/DateDisplayConditons"
+    },
+    {
+      "name": "FridayDisplay",
+      "type": "procedure",
+      "sortid": 74,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "friday_display",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/mcreator/bimble/procedures/FridayDisplayProcedure.java"
+        ],
+        "dependencies": []
+      },
+      "path": "~/DateDisplayConditons"
+    },
+    {
+      "name": "SaturdayDisplay",
+      "type": "procedure",
+      "sortid": 75,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "saturday_display",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/mcreator/bimble/procedures/SaturdayDisplayProcedure.java"
+        ],
+        "dependencies": []
+      },
+      "path": "~/DateDisplayConditons"
+    }
+  ],
+  "variable_elements": [
+    {
+      "name": "Day",
+      "type": "number",
+      "scope": "map",
+      "value": "1.0"
+    },
+    {
+      "name": "OrderType",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "0"
+    },
+    {
+      "name": "DroneAnimation",
+      "type": "number",
+      "scope": "world",
+      "value": "0"
+    },
+    {
+      "name": "DayName",
+      "type": "string",
+      "scope": "map",
+      "value": "\"\""
+    },
+    {
+      "name": "TicksPassed",
+      "type": "number",
+      "scope": "map",
+      "value": "0"
+    },
+    {
+      "name": "DoubleBarrelStore",
+      "type": "itemstack",
+      "scope": "player_persistent",
+      "value": "ItemStack.EMPTY"
+    },
+    {
+      "name": "Solari",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "0"
+    },
+    {
+      "name": "Voiceline",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "0"
+    }
+  ],
+  "sound_elements": [
+    {
+      "name": "dronedeliver",
+      "files": [
+        "dronedeliver"
+      ],
+      "category": "neutral",
+      "subtitle": "Drone wirs"
+    },
+    {
+      "name": "thecompanythanksyouforyourservice",
+      "files": [
+        "the_company_thanks_you"
+      ],
+      "category": "neutral",
+      "subtitle": "Drone speaker"
+    },
+    {
+      "name": "bimblethanksyou",
+      "files": [
+        "bimble_thanks_you_for_your_service"
+      ],
+      "category": "neutral",
+      "subtitle": "Drone speaker"
+    },
+    {
+      "name": "enjoy_your_gun",
+      "files": [
+        "enjoy_your_gun"
+      ],
+      "category": "neutral",
+      "subtitle": "Drone speaker"
+    },
+    {
+      "name": "ripandtear",
+      "files": [
+        "rip_and_tear"
+      ],
+      "category": "neutral",
+      "subtitle": "Drone speaker"
+    },
+    {
+      "name": "it_is_said_to_lure_creatures",
+      "files": [
+        "it_is_said_to_lure_creatures"
+      ],
+      "category": "neutral",
+      "subtitle": "Drone speaker"
+    },
+    {
+      "name": "thankyouforyourservice",
+      "files": [
+        "thank_you_for_your_service"
+      ],
+      "category": "neutral",
+      "subtitle": "Drone speaker"
+    }
+  ],
+  "language_map": {
+    "en_us": {
+      "item.bimble.double_barrel": "Double Barrel",
+      "gui.bimble.catalog.button_calender": "Calender",
+      "key.category.bimble": "Bimble",
+      "gui.bimble.catalog.label_welcome_user": "Welcome User!",
+      "subtitles.ripandtear": "Drone speaker",
+      "subtitles.thecompanythanksyouforyourservice": "Drone speaker",
+      "item.bimble.bowl_of_soot": "Bowl of Soot",
+      "gui.bimble.store.label_apple": "32x Kompeitō (6x Solari)",
+      "gui.bimble.catalog.label_what_will_it_be_today": "What will it be today?",
+      "block.bimble.ume_egg": "Ume Egg",
+      "gui.bimble.store.button_buy": "Buy",
+      "entity.bimble.susuwatari": "Susuwatari",
+      "gui.bimble.ammo_count_double_barrel.label_12": "1/2",
+      "item.bimble.double_barrel_bullets": "Double Barrel Bullets",
+      "gui.bimble.store.label_1x_double_barrel": "1x Double Barrel (64x Solari)",
+      "key.bimble.double_barrel_reload": "Double Barrel Reload",
+      "gui.bimble.store.button_buy1": "Buy",
+      "item.bimble.drone_spawn_egg": "Delivery Drone Spawn Egg",
+      "subtitles.thankyouforyourservice": "Drone speaker",
+      "item.bimble.star_candy": "Kompeitō",
+      "subtitles.bimblethanksyou": "Drone speaker",
+      "item.bimble.susuwatari_spawn_egg": "Susuwatari Spawn Egg",
+      "block.bimble.recycler": "Recycler",
+      "subtitles.enjoy_your_gun": "Drone speaker",
+      "gui.bimble.catalog.button_store": "Store",
+      "subtitles.it_is_said_to_lure_creatures": "Drone speaker",
+      "item.bimble.shotgun_shell": "Shotgun Shell",
+      "item.bimble.catalog_console": "Catalog Console",
+      "subtitles.dronedeliver": "Drone wirs",
+      "entity.bimble.drone": "Delivery Drone",
+      "gui.bimble.ammo_count_double_barrel.label_22": "2/2",
+      "gui.bimble.ammo_count_double_barrel.label_02": "0/2"
+    }
+  },
+  "foldersRoot": {
+    "name": "~",
+    "children": [
+      {
+        "name": "DateDisplayConditons",
+        "children": []
+      }
+    ]
+  },
+  "workspaceSettings": {
+    "modid": "bimble",
+    "modName": "Bimble",
+    "version": "1.0.0",
+    "author": "bruin, MCreator",
+    "websiteURL": "https://mcreator.net",
+    "license": "Academic Free License v3.0",
+    "disableForgeVersionCheck": true,
+    "serverSideOnly": false,
+    "requiredMods": [],
+    "dependencies": [],
+    "dependants": [],
+    "mcreatorDependencies": [
+      "geckolib"
+    ],
+    "currentGenerator": "forge-1.20.1",
+    "credits": "Created using mod maker MCreator - https://mcreator.net/about",
+    "modElementsPackage": "net.mcreator.bimble",
+    "lockBaseModFiles": false
+  },
+  "mcreatorVersion": 202300336712
+}
