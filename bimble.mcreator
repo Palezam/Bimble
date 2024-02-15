@@ -9,9 +9,9 @@
       "registry_name": "catalog",
       "metadata": {
         "files": [
-          "src/main/java/net/mcreator/bimble/network/CatalogButtonMessage.java",
+          "src/main/java/net/mcreator/bimble/client/gui/CatalogScreen.java",
           "src/main/java/net/mcreator/bimble/world/inventory/CatalogMenu.java",
-          "src/main/java/net/mcreator/bimble/client/gui/CatalogScreen.java"
+          "src/main/java/net/mcreator/bimble/network/CatalogButtonMessage.java"
         ]
       }
     },
