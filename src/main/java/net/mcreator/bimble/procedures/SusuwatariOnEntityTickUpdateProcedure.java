@@ -80,8 +80,9 @@ public class SusuwatariOnEntityTickUpdateProcedure {
 						entity.getPersistentData().putBoolean("HasCopiedData", false);
 					}
 				} else if (entity.getPersistentData().getBoolean("HasCoal") == true) {
+					entity.setShiftKeyDown(true);
 					if (entity instanceof SusuwatariEntity) {
-						((SusuwatariEntity) entity).setAnimation("RunwithCoal");
+						((SusuwatariEntity) entity).setAnimation("runwithcoal");
 					}
 					if (entity instanceof Mob _entity)
 						_entity.getNavigation().moveTo((entity.getPersistentData().getDouble("FurnaceX")), (entity.getPersistentData().getDouble("FurnaceY")), (entity.getPersistentData().getDouble("FurnaceZ")), 1);
@@ -165,6 +166,11 @@ public class SusuwatariOnEntityTickUpdateProcedure {
 				_level.sendParticles(ParticleTypes.SMOKE, x, y, z, 20, 0.5, 0.5, 0.5, 0.1);
 			if (!entity.level().isClientSide())
 				entity.discard();
+		}
+		if (entity.getPersistentData().getBoolean("HasCoal") == true) {
+			entity.setShiftKeyDown(true);
+		} else {
+			entity.setShiftKeyDown(false);
 		}
 		return false;
 	}

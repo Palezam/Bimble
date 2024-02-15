@@ -128,6 +128,7 @@ public class SusuwatariEntity extends Monster implements GeoEntity {
 		builder = builder.add(Attributes.ARMOR, 0);
 		builder = builder.add(Attributes.ATTACK_DAMAGE, 3);
 		builder = builder.add(Attributes.FOLLOW_RANGE, 16);
+		builder = builder.add(Attributes.ATTACK_KNOCKBACK, 0.1);
 		return builder;
 	}
 
@@ -137,6 +138,9 @@ public class SusuwatariEntity extends Monster implements GeoEntity {
 
 			) {
 				return event.setAndContinue(RawAnimation.begin().thenLoop("run"));
+			}
+			if (this.isShiftKeyDown()) {
+				return event.setAndContinue(RawAnimation.begin().thenLoop("runwithcoal"));
 			}
 			return event.setAndContinue(RawAnimation.begin().thenLoop("idle"));
 		}

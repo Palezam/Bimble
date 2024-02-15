@@ -1177,6 +1177,40 @@
         "dependencies": []
       },
       "path": "~/DateDisplayConditons"
+    },
+    {
+      "name": "SusuwatariPlayReturnedAnimation",
+      "type": "procedure",
+      "sortid": 76,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "susuwatari_play_returned_animation",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/bimble/procedures/SusuwatariPlayReturnedAnimationProcedure.java"
+        ],
+        "dependencies": []
+      }
+    },
+    {
+      "name": "SusuwatariLoopExternalAnimations",
+      "type": "procedure",
+      "sortid": 77,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "susuwatari_loop_external_animations",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/mcreator/bimble/procedures/SusuwatariLoopExternalAnimationsProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
     }
   ],
   "variable_elements": [

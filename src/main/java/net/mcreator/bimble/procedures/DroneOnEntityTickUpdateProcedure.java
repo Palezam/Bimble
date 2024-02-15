@@ -22,7 +22,7 @@ public class DroneOnEntityTickUpdateProcedure {
 		}
 		if (entity.getPersistentData().getBoolean("Attacked") == true) {
 			if (entity instanceof Mob _entity)
-				_entity.getNavigation().moveTo(x, y, z, 3);
+				_entity.getNavigation().moveTo(x, y, z, 1000);
 		} else {
 			if (entity instanceof Mob _entity)
 				_entity.getNavigation().moveTo(x, (y + 1), z, 1);

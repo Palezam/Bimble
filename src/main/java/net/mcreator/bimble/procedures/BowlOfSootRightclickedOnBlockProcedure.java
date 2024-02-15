@@ -40,6 +40,50 @@ public class BowlOfSootRightclickedOnBlockProcedure {
 			}
 		}
 		if (!entity.isShiftKeyDown()) {
+			if (entity.getPersistentData().getBoolean("CopiedFurnaceData") == true && entity.getPersistentData().getBoolean("CopiedChestData") == true) {
+				if (world instanceof ServerLevel _level) {
+					Entity _entityToSpawn = BimbleModEntities.SUSUWATARI.get().create(_level);
+					_entityToSpawn.moveTo(x, (y + 1), z, world.getRandom().nextFloat() * 360.0F, 0.0F);
+					if (_entityToSpawn instanceof Mob _mobToSpawn) {
+						_mobToSpawn.finalizeSpawn(_level, _level.getCurrentDifficultyAt(_entityToSpawn.blockPosition()), MobSpawnType.MOB_SUMMONED, null, null);
+					}
+					if (!(((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getDisplayName().getString()).equals("[Bowl of Soot]"))) {
+						(_entityToSpawn).setCustomName(Component.literal(((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getOrCreateTag().getString("savedname"))));
+					}
+					if (!((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getOrCreateTag().getDouble("savedhealth") == 0)) {
+						if ((_entityToSpawn) instanceof LivingEntity _entity)
+							_entity.setHealth((float) ((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getOrCreateTag().getDouble("savedhealth")));
+					} else {
+						(entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getOrCreateTag().putDouble("savedhealth", 3);
+					}
+					(_entityToSpawn).getPersistentData().putBoolean("HasCopiedData", true);
+					(_entityToSpawn).getPersistentData().putDouble("FurnaceX", (entity.getPersistentData().getDouble("FurnaceX")));
+					(_entityToSpawn).getPersistentData().putDouble("FurnaceY", (entity.getPersistentData().getDouble("FurnaceY")));
+					(_entityToSpawn).getPersistentData().putDouble("FurnaceZ", (entity.getPersistentData().getDouble("FurnaceZ")));
+					(_entityToSpawn).getPersistentData().putDouble("ChestX", (entity.getPersistentData().getDouble("ChestX")));
+					(_entityToSpawn).getPersistentData().putDouble("ChestY", (entity.getPersistentData().getDouble("ChestY")));
+					(_entityToSpawn).getPersistentData().putDouble("ChestZ", (entity.getPersistentData().getDouble("ChestZ")));
+					_level.addFreshEntity(_entityToSpawn);
+				}
+			} else {
+				if (world instanceof ServerLevel _level) {
+					Entity _entityToSpawn = BimbleModEntities.SUSUWATARI.get().create(_level);
+					_entityToSpawn.moveTo(x, (y + 1), z, world.getRandom().nextFloat() * 360.0F, 0.0F);
+					if (_entityToSpawn instanceof Mob _mobToSpawn) {
+						_mobToSpawn.finalizeSpawn(_level, _level.getCurrentDifficultyAt(_entityToSpawn.blockPosition()), MobSpawnType.MOB_SUMMONED, null, null);
+					}
+					if (!(((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getDisplayName().getString()).equals("[Bowl of Soot]"))) {
+						(_entityToSpawn).setCustomName(Component.literal(((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getOrCreateTag().getString("savedname"))));
+					}
+					if (!((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getOrCreateTag().getDouble("savedhealth") == 0)) {
+						if ((_entityToSpawn) instanceof LivingEntity _entity)
+							_entity.setHealth((float) ((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getOrCreateTag().getDouble("savedhealth")));
+					} else {
+						(entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getOrCreateTag().putDouble("savedhealth", 3);
+					}
+					_level.addFreshEntity(_entityToSpawn);
+				}
+			}
 			if (entity instanceof Player _playerHasItem ? _playerHasItem.getInventory().contains(new ItemStack(Items.BOWL)) : false) {
 				if (entity instanceof Player _player) {
 					ItemStack _setstack = new ItemStack(Items.BOWL);
@@ -60,30 +104,6 @@ public class BowlOfSootRightclickedOnBlockProcedure {
 					_entity.setItemInHand(InteractionHand.MAIN_HAND, _setstack);
 					if (_entity instanceof Player _player)
 						_player.getInventory().setChanged();
-				}
-			}
-			if (entity.getPersistentData().getBoolean("CopiedFurnaceData") == true && entity.getPersistentData().getBoolean("CopiedChestData") == true) {
-				if (world instanceof ServerLevel _level) {
-					Entity _entityToSpawn = BimbleModEntities.SUSUWATARI.get().create(_level);
-					_entityToSpawn.moveTo(x, (y + 1), z, world.getRandom().nextFloat() * 360.0F, 0.0F);
-					if (_entityToSpawn instanceof Mob _mobToSpawn) {
-						_mobToSpawn.finalizeSpawn(_level, _level.getCurrentDifficultyAt(_entityToSpawn.blockPosition()), MobSpawnType.MOB_SUMMONED, null, null);
-					}
-					(_entityToSpawn).getPersistentData().putBoolean("HasCopiedData", true);
-					(_entityToSpawn).getPersistentData().putDouble("FurnaceX", (entity.getPersistentData().getDouble("FurnaceX")));
-					(_entityToSpawn).getPersistentData().putDouble("FurnaceY", (entity.getPersistentData().getDouble("FurnaceY")));
-					(_entityToSpawn).getPersistentData().putDouble("FurnaceZ", (entity.getPersistentData().getDouble("FurnaceZ")));
-					(_entityToSpawn).getPersistentData().putDouble("ChestX", (entity.getPersistentData().getDouble("ChestX")));
-					(_entityToSpawn).getPersistentData().putDouble("ChestY", (entity.getPersistentData().getDouble("ChestY")));
-					(_entityToSpawn).getPersistentData().putDouble("ChestZ", (entity.getPersistentData().getDouble("ChestZ")));
-					_level.addFreshEntity(_entityToSpawn);
-				}
-			} else {
-				if (world instanceof ServerLevel _level) {
-					Entity entityToSpawn = BimbleModEntities.SUSUWATARI.get().spawn(_level, BlockPos.containing(x, y + 1, z), MobSpawnType.MOB_SUMMONED);
-					if (entityToSpawn != null) {
-						entityToSpawn.setDeltaMovement(0, 0, 0);
-					}
 				}
 			}
 		}

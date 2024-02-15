@@ -11,10 +11,12 @@ import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.network.chat.Component;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.core.BlockPos;
 
@@ -39,7 +41,7 @@ public class SootGuyRightClickedProcedure {
 	private static void execute(@Nullable Event event, LevelAccessor world, double x, double y, double z, Entity entity, Entity sourceentity) {
 		if (entity == null || sourceentity == null)
 			return;
-		if (sourceentity.isShiftKeyDown() && sourceentity instanceof Player && (sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() == Items.BOWL && entity instanceof SusuwatariEntity) {
+		if (sourceentity instanceof Player && (sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() == Items.BOWL && entity instanceof SusuwatariEntity) {
 			if (sourceentity instanceof LivingEntity _entity) {
 				ItemStack _setstack = new ItemStack(BimbleModItems.BOWL_OF_SOOT.get());
 				_setstack.setCount(1);
@@ -47,12 +49,23 @@ public class SootGuyRightClickedProcedure {
 				if (_entity instanceof Player _player)
 					_player.getInventory().setChanged();
 			}
+			(sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getOrCreateTag().putDouble("savedhealth", (entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1));
+			if (!(entity.getDisplayName().getString()).equals("Susuwatari")) {
+				(sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).setHoverName(Component.literal(("Bowl of " + entity.getDisplayName().getString())));
+				(sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getOrCreateTag().putString("savedname", (entity.getDisplayName().getString()));
+			}
+			if (entity.getPersistentData().getBoolean("HasCoal") == true) {
+				if (world instanceof ServerLevel _level) {
+					ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getX()), (entity.getY()), (entity.getZ()), new ItemStack(Items.COAL));
+					entityToSpawn.setPickUpDelay(10);
+					_level.addFreshEntity(entityToSpawn);
+				}
+			}
 			if (entity instanceof SusuwatariEntity) {
 				if (!entity.level().isClientSide())
 					entity.discard();
 			}
-		} else if (sourceentity instanceof Player && sourceentity instanceof Player && (sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() == BimbleModItems.STAR_CANDY.get()
-				&& entity instanceof SusuwatariEntity) {
+		} else if (sourceentity instanceof Player && (sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() == BimbleModItems.STAR_CANDY.get() && entity instanceof SusuwatariEntity) {
 			if ((sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() == BimbleModItems.STAR_CANDY.get()) {
 				if (sourceentity instanceof LivingEntity _entity) {
 					ItemStack _setstack = new ItemStack(BimbleModItems.STAR_CANDY.get());
