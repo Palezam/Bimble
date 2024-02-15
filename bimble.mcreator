@@ -608,11 +608,11 @@
       "registry_name": "susuwatari",
       "metadata": {
         "files": [
+          "src/main/resources/assets/bimble/models/item/susuwatari_spawn_egg.json",
+          "src/main/java/net/mcreator/bimble/entity/SusuwatariEntity.java",
           "src/main/java/net/mcreator/bimble/client/renderer/SusuwatariRenderer.java",
           "src/main/resources/data/bimble/forge/biome_modifier/susuwatari_biome_modifier.json",
-          "src/main/java/net/mcreator/bimble/entity/model/SusuwatariModel.java",
-          "src/main/java/net/mcreator/bimble/entity/SusuwatariEntity.java",
-          "src/main/resources/assets/bimble/models/item/susuwatari_spawn_egg.json"
+          "src/main/java/net/mcreator/bimble/entity/model/SusuwatariModel.java"
         ]
       }
     },

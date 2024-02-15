@@ -12,9 +12,9 @@
     "boundingBoxScale": {
       "fixedValue": 0.1
     },
-    "modelWidth": 2.0,
-    "modelHeight": 1.2,
-    "modelShadowSize": 0.5,
+    "modelWidth": 3.0,
+    "modelHeight": 3.0,
+    "modelShadowSize": 0.3,
     "mountedYOffset": 0.0,
     "hasSpawnEgg": true,
     "spawnEggBaseColor": {
@@ -58,7 +58,7 @@
     "armorBaseValue": 0.0,
     "trackingRange": 64,
     "followRange": 16,
-    "health": 10,
+    "health": 3,
     "xpAmount": 0,
     "waterMob": false,
     "flyingMob": false,

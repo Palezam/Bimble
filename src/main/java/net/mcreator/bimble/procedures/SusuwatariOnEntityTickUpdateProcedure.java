@@ -85,72 +85,77 @@ public class SusuwatariOnEntityTickUpdateProcedure {
 					}
 					if (entity instanceof Mob _entity)
 						_entity.getNavigation().moveTo((entity.getPersistentData().getDouble("FurnaceX")), (entity.getPersistentData().getDouble("FurnaceY")), (entity.getPersistentData().getDouble("FurnaceZ")), 1);
-					if ((world.getBlockState(BlockPos.containing(entity.getPersistentData().getDouble("FurnaceX"), entity.getPersistentData().getDouble("FurnaceY"), entity.getPersistentData().getDouble("FurnaceZ")))).getBlock() == Blocks.FURNACE) {
-						if ((new Object() {
-							public ItemStack getItemStack(LevelAccessor world, BlockPos pos, int slotid) {
-								AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-								BlockEntity _ent = world.getBlockEntity(pos);
-								if (_ent != null)
-									_ent.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> _retval.set(capability.getStackInSlot(slotid).copy()));
-								return _retval.get();
-							}
-						}.getItemStack(world, BlockPos.containing(x, y, z), 1)).getItem() == Items.COAL || (new Object() {
-							public ItemStack getItemStack(LevelAccessor world, BlockPos pos, int slotid) {
-								AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-								BlockEntity _ent = world.getBlockEntity(pos);
-								if (_ent != null)
-									_ent.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> _retval.set(capability.getStackInSlot(slotid).copy()));
-								return _retval.get();
-							}
-						}.getItemStack(world, BlockPos.containing(x, y, z), 1)).getItem() == Blocks.AIR.asItem()) {
-							if (new Object() {
-								public int getAmount(LevelAccessor world, BlockPos pos, int slotid) {
-									AtomicInteger _retval = new AtomicInteger(0);
+					if (entity.getY() == entity.getPersistentData().getDouble("FurnaceY") + 1) {
+						if ((world.getBlockState(BlockPos.containing(entity.getPersistentData().getDouble("FurnaceX"), entity.getPersistentData().getDouble("FurnaceY"), entity.getPersistentData().getDouble("FurnaceZ"))))
+								.getBlock() == Blocks.FURNACE) {
+							if ((new Object() {
+								public ItemStack getItemStack(LevelAccessor world, BlockPos pos, int slotid) {
+									AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
 									BlockEntity _ent = world.getBlockEntity(pos);
 									if (_ent != null)
-										_ent.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> _retval.set(capability.getStackInSlot(slotid).getCount()));
+										_ent.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> _retval.set(capability.getStackInSlot(slotid).copy()));
 									return _retval.get();
 								}
-							}.getAmount(world, BlockPos.containing(x, y, z), 1) >= 0) {
-								entity.getPersistentData().putBoolean("HasCoal", false);
-								{
-									BlockEntity _ent = world.getBlockEntity(BlockPos.containing(entity.getPersistentData().getDouble("FurnaceX"), entity.getPersistentData().getDouble("FurnaceY"), entity.getPersistentData().getDouble("FurnaceZ")));
-									if (_ent != null) {
-										final int _slotid = 1;
-										final ItemStack _setstack = new ItemStack(Items.COAL);
-										_setstack.setCount((int) (new Object() {
-											public int getAmount(LevelAccessor world, BlockPos pos, int slotid) {
-												AtomicInteger _retval = new AtomicInteger(0);
-												BlockEntity _ent = world.getBlockEntity(pos);
-												if (_ent != null)
-													_ent.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> _retval.set(capability.getStackInSlot(slotid).getCount()));
-												return _retval.get();
-											}
-										}.getAmount(world, BlockPos.containing(entity.getPersistentData().getDouble("FurnaceX"), entity.getPersistentData().getDouble("FurnaceY"), entity.getPersistentData().getDouble("FurnaceZ")), 1) + 1));
-										_ent.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-											if (capability instanceof IItemHandlerModifiable)
-												((IItemHandlerModifiable) capability).setStackInSlot(_slotid, _setstack);
-										});
-									}
+							}.getItemStack(world, BlockPos.containing(x, y, z), 1)).getItem() == Items.COAL || (new Object() {
+								public ItemStack getItemStack(LevelAccessor world, BlockPos pos, int slotid) {
+									AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
+									BlockEntity _ent = world.getBlockEntity(pos);
+									if (_ent != null)
+										_ent.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> _retval.set(capability.getStackInSlot(slotid).copy()));
+									return _retval.get();
 								}
-							} else {
-								entity.getPersistentData().putBoolean("HasCoal", false);
-								{
-									BlockEntity _ent = world.getBlockEntity(BlockPos.containing(entity.getPersistentData().getDouble("FurnaceX"), entity.getPersistentData().getDouble("FurnaceY"), entity.getPersistentData().getDouble("FurnaceZ")));
-									if (_ent != null) {
-										final int _slotid = 1;
-										final ItemStack _setstack = new ItemStack(Items.COAL);
-										_setstack.setCount(1);
-										_ent.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
-											if (capability instanceof IItemHandlerModifiable)
-												((IItemHandlerModifiable) capability).setStackInSlot(_slotid, _setstack);
-										});
+							}.getItemStack(world, BlockPos.containing(x, y, z), 1)).getItem() == Blocks.AIR.asItem()) {
+								if (new Object() {
+									public int getAmount(LevelAccessor world, BlockPos pos, int slotid) {
+										AtomicInteger _retval = new AtomicInteger(0);
+										BlockEntity _ent = world.getBlockEntity(pos);
+										if (_ent != null)
+											_ent.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> _retval.set(capability.getStackInSlot(slotid).getCount()));
+										return _retval.get();
+									}
+								}.getAmount(world, BlockPos.containing(x, y, z), 1) >= 0) {
+									entity.getPersistentData().putBoolean("HasCoal", false);
+									{
+										BlockEntity _ent = world
+												.getBlockEntity(BlockPos.containing(entity.getPersistentData().getDouble("FurnaceX"), entity.getPersistentData().getDouble("FurnaceY"), entity.getPersistentData().getDouble("FurnaceZ")));
+										if (_ent != null) {
+											final int _slotid = 1;
+											final ItemStack _setstack = new ItemStack(Items.COAL);
+											_setstack.setCount((int) (new Object() {
+												public int getAmount(LevelAccessor world, BlockPos pos, int slotid) {
+													AtomicInteger _retval = new AtomicInteger(0);
+													BlockEntity _ent = world.getBlockEntity(pos);
+													if (_ent != null)
+														_ent.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> _retval.set(capability.getStackInSlot(slotid).getCount()));
+													return _retval.get();
+												}
+											}.getAmount(world, BlockPos.containing(entity.getPersistentData().getDouble("FurnaceX"), entity.getPersistentData().getDouble("FurnaceY"), entity.getPersistentData().getDouble("FurnaceZ")), 1) + 1));
+											_ent.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
+												if (capability instanceof IItemHandlerModifiable)
+													((IItemHandlerModifiable) capability).setStackInSlot(_slotid, _setstack);
+											});
+										}
+									}
+								} else {
+									entity.getPersistentData().putBoolean("HasCoal", false);
+									{
+										BlockEntity _ent = world
+												.getBlockEntity(BlockPos.containing(entity.getPersistentData().getDouble("FurnaceX"), entity.getPersistentData().getDouble("FurnaceY"), entity.getPersistentData().getDouble("FurnaceZ")));
+										if (_ent != null) {
+											final int _slotid = 1;
+											final ItemStack _setstack = new ItemStack(Items.COAL);
+											_setstack.setCount(1);
+											_ent.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> {
+												if (capability instanceof IItemHandlerModifiable)
+													((IItemHandlerModifiable) capability).setStackInSlot(_slotid, _setstack);
+											});
+										}
 									}
 								}
 							}
+						} else {
+							entity.getPersistentData().putBoolean("HasCopiedData", false);
 						}
-					} else {
-						entity.getPersistentData().putBoolean("HasCopiedData", false);
 					}
 				}
 			}

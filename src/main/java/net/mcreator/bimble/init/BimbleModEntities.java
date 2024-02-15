@@ -33,7 +33,7 @@ public class BimbleModEntities {
 	public static final RegistryObject<EntityType<SusuwatariEntity>> SUSUWATARI = register("susuwatari",
 			EntityType.Builder.<SusuwatariEntity>of(SusuwatariEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(SusuwatariEntity::new)
 
-					.sized(2f, 1.2f));
+					.sized(3f, 3f));
 
 	private static <T extends Entity> RegistryObject<EntityType<T>> register(String registryname, EntityType.Builder<T> entityTypeBuilder) {
 		return REGISTRY.register(registryname, () -> (EntityType<T>) entityTypeBuilder.build(registryname));

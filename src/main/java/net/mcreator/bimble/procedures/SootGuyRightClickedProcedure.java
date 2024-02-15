@@ -77,7 +77,7 @@ public class SootGuyRightClickedProcedure {
 				((SusuwatariEntity) entity).setAnimation("eat");
 			}
 			if (world instanceof ServerLevel _level)
-				_level.sendParticles(ParticleTypes.HEART, x, y, z, 5, 1, 1, 1, 1);
+				_level.sendParticles(ParticleTypes.HEART, (entity.getX()), (entity.getY()), (entity.getZ()), 2, 0.6, 0.6, 0.6, 1);
 		}
 	}
 }

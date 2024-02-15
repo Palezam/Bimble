@@ -18,7 +18,7 @@ import com.mojang.blaze3d.vertex.PoseStack;
 public class SusuwatariRenderer extends GeoEntityRenderer<SusuwatariEntity> {
 	public SusuwatariRenderer(EntityRendererProvider.Context renderManager) {
 		super(renderManager, new SusuwatariModel());
-		this.shadowRadius = 0.5f;
+		this.shadowRadius = 0.3f;
 	}
 
 	@Override
