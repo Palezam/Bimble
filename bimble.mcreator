@@ -1224,6 +1224,20 @@
           "src/main/resources/data/bimble/advancements/ashesto_ashes.json"
         ]
       }
+    },
+    {
+      "name": "Poopoo",
+      "type": "item",
+      "sortid": 79,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "poopoo",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/bimble/item/PoopooItem.java",
+          "src/main/resources/assets/bimble/models/item/poopoo.json"
+        ]
+      }
     }
   ],
   "variable_elements": [
@@ -1367,6 +1381,7 @@
       "item.bimble.shotgun_shell": "Shotgun Shell",
       "item.bimble.catalog_console": "Catalog Console",
       "subtitles.dronedeliver": "Drone wirs",
+      "item.bimble.poopoo": "Poopoo",
       "entity.bimble.drone": "Delivery Drone",
       "gui.bimble.ammo_count_double_barrel.label_22": "2/2",
       "gui.bimble.ammo_count_double_barrel.label_02": "0/2"

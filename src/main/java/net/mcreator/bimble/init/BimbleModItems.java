@@ -15,6 +15,7 @@ import net.minecraft.world.item.BlockItem;
 
 import net.mcreator.bimble.item.StarCandyItem;
 import net.mcreator.bimble.item.ShotgunShellItem;
+import net.mcreator.bimble.item.PoopooItem;
 import net.mcreator.bimble.item.DoubleBarrelItem;
 import net.mcreator.bimble.item.DoubleBarrelBulletsItem;
 import net.mcreator.bimble.item.CatalogConsoleItem;
@@ -34,6 +35,7 @@ public class BimbleModItems {
 	public static final RegistryObject<Item> SUSUWATARI_SPAWN_EGG = REGISTRY.register("susuwatari_spawn_egg", () -> new ForgeSpawnEggItem(BimbleModEntities.SUSUWATARI, -10066330, -1, new Item.Properties()));
 	public static final RegistryObject<Item> BOWL_OF_SOOT = REGISTRY.register("bowl_of_soot", () -> new BowlOfSootItem());
 	public static final RegistryObject<Item> RECYCLER = REGISTRY.register(BimbleModBlocks.RECYCLER.getId().getPath(), () -> new RecyclerDisplayItem(BimbleModBlocks.RECYCLER.get(), new Item.Properties()));
+	public static final RegistryObject<Item> POOPOO = REGISTRY.register("poopoo", () -> new PoopooItem());
 
 	private static RegistryObject<Item> block(RegistryObject<Block> block) {
 		return REGISTRY.register(block.getId().getPath(), () -> new BlockItem(block.get(), new Item.Properties()));
