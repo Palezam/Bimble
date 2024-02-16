@@ -38,7 +38,7 @@ public class SusuwatariOnEntityTickUpdateProcedure {
 					if (entity instanceof Mob _entity)
 						_entity.getNavigation().moveTo((entity.getPersistentData().getDouble("ChestX")), (entity.getPersistentData().getDouble("ChestY")), (entity.getPersistentData().getDouble("ChestZ")), 1);
 					if ((world.getBlockState(BlockPos.containing(entity.getPersistentData().getDouble("ChestX"), entity.getPersistentData().getDouble("ChestY"), entity.getPersistentData().getDouble("ChestZ")))).getBlock() == Blocks.CHEST) {
-						for (int index0 = 0; index0 < 27; index0++) {
+						for (int index0 = 0; index0 < 54; index0++) {
 							if (!((new Object() {
 								public ItemStack getItemStack(LevelAccessor world, BlockPos pos, int slotid) {
 									AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);

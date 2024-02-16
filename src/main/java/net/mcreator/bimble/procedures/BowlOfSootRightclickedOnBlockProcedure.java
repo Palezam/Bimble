@@ -65,6 +65,8 @@ public class BowlOfSootRightclickedOnBlockProcedure {
 					(_entityToSpawn).getPersistentData().putDouble("ChestZ", (entity.getPersistentData().getDouble("ChestZ")));
 					_level.addFreshEntity(_entityToSpawn);
 				}
+				entity.getPersistentData().putBoolean("CopiedFurnaceData", false);
+				entity.getPersistentData().putBoolean("CopiedChestData", false);
 			} else {
 				if (world instanceof ServerLevel _level) {
 					Entity _entityToSpawn = BimbleModEntities.SUSUWATARI.get().create(_level);

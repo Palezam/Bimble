@@ -53,10 +53,10 @@
       "registry_name": "drone",
       "metadata": {
         "files": [
+          "src/main/java/net/mcreator/bimble/client/renderer/DroneRenderer.java",
           "src/main/resources/assets/bimble/models/item/drone_spawn_egg.json",
-          "src/main/java/net/mcreator/bimble/entity/model/DroneModel.java",
           "src/main/java/net/mcreator/bimble/entity/DroneEntity.java",
-          "src/main/java/net/mcreator/bimble/client/renderer/DroneRenderer.java"
+          "src/main/java/net/mcreator/bimble/entity/model/DroneModel.java"
         ]
       }
     },

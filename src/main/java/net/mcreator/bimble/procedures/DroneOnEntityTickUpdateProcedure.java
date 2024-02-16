@@ -13,6 +13,9 @@ public class DroneOnEntityTickUpdateProcedure {
 		double x = 0;
 		double y = 0;
 		double z = 0;
+		double directionx = 0;
+		double directiony = 0;
+		double directionz = 0;
 		for (Entity entityiterator : new ArrayList<>(world.players())) {
 			if ((entityiterator.getDisplayName().getString()).equals(entity.getPersistentData().getString("SearchName"))) {
 				x = entityiterator.getX();
@@ -22,7 +25,7 @@ public class DroneOnEntityTickUpdateProcedure {
 		}
 		if (entity.getPersistentData().getBoolean("Attacked") == true) {
 			if (entity instanceof Mob _entity)
-				_entity.getNavigation().moveTo(x, y, z, 1000);
+				_entity.getNavigation().moveTo(x, (y + 1), z, 5);
 		} else {
 			if (entity instanceof Mob _entity)
 				_entity.getNavigation().moveTo(x, (y + 1), z, 1);

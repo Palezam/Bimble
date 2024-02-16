@@ -1,5 +1,6 @@
 package net.mcreator.bimble.procedures;
 
+import net.minecraftforge.items.ItemHandlerHelper;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.eventbus.api.Event;
@@ -41,18 +42,42 @@ public class SootGuyRightClickedProcedure {
 	private static void execute(@Nullable Event event, LevelAccessor world, double x, double y, double z, Entity entity, Entity sourceentity) {
 		if (entity == null || sourceentity == null)
 			return;
+		ItemStack saveditem = ItemStack.EMPTY;
+		double amount = 0;
 		if (sourceentity instanceof Player && (sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() == Items.BOWL && entity instanceof SusuwatariEntity) {
-			if (sourceentity instanceof LivingEntity _entity) {
-				ItemStack _setstack = new ItemStack(BimbleModItems.BOWL_OF_SOOT.get());
-				_setstack.setCount(1);
-				_entity.setItemInHand(InteractionHand.MAIN_HAND, _setstack);
-				if (_entity instanceof Player _player)
-					_player.getInventory().setChanged();
+			amount = (sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getCount();
+			if (amount == 1) {
+				if (sourceentity instanceof LivingEntity _entity) {
+					ItemStack _setstack = new ItemStack(BimbleModItems.BOWL_OF_SOOT.get());
+					_setstack.setCount(1);
+					_entity.setItemInHand(InteractionHand.MAIN_HAND, _setstack);
+					if (_entity instanceof Player _player)
+						_player.getInventory().setChanged();
+				}
+				saveditem = (sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY);
+			} else {
+				if (sourceentity instanceof Player _player) {
+					ItemStack _stktoremove = new ItemStack(Items.BOWL);
+					_player.getInventory().clearOrCountMatchingItems(p -> _stktoremove.getItem() == p.getItem(), (int) amount, _player.inventoryMenu.getCraftSlots());
+				}
+				if (sourceentity instanceof LivingEntity _entity) {
+					ItemStack _setstack = new ItemStack(BimbleModItems.BOWL_OF_SOOT.get());
+					_setstack.setCount(1);
+					_entity.setItemInHand(InteractionHand.MAIN_HAND, _setstack);
+					if (_entity instanceof Player _player)
+						_player.getInventory().setChanged();
+				}
+				if (sourceentity instanceof Player _player) {
+					ItemStack _setstack = new ItemStack(Items.BOWL);
+					_setstack.setCount((int) (amount - 1));
+					ItemHandlerHelper.giveItemToPlayer(_player, _setstack);
+				}
+				saveditem = (sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY);
 			}
-			(sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getOrCreateTag().putDouble("savedhealth", (entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1));
+			saveditem.getOrCreateTag().putDouble("savedhealth", (entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1));
 			if (!(entity.getDisplayName().getString()).equals("Susuwatari")) {
-				(sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).setHoverName(Component.literal(("Bowl of " + entity.getDisplayName().getString())));
-				(sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getOrCreateTag().putString("savedname", (entity.getDisplayName().getString()));
+				saveditem.setHoverName(Component.literal(("Bowl of " + entity.getDisplayName().getString())));
+				saveditem.getOrCreateTag().putString("savedname", (entity.getDisplayName().getString()));
 			}
 			if (entity.getPersistentData().getBoolean("HasCoal") == true) {
 				if (world instanceof ServerLevel _level) {
