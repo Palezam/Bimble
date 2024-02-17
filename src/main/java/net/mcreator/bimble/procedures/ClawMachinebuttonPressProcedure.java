@@ -1,15 +1,8 @@
 package net.mcreator.bimble.procedures;
 
-import net.minecraft.world.level.block.state.properties.IntegerProperty;
-import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.level.LevelAccessor;
-import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.entity.Entity;
-import net.minecraft.network.chat.Component;
-import net.minecraft.core.BlockPos;
+import net.minecraftforge.eventbus.api.Event;
 
-import net.mcreator.bimble.network.BimbleModVariables;
-import net.mcreator.bimble.BimbleMod;
+import javax.annotation.Nullable;
 
 public class ClawMachinebuttonPressProcedure {
 	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity) {

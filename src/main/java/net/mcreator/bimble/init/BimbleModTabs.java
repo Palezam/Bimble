@@ -40,6 +40,7 @@ public class BimbleModTabs {
 			tabData.accept(BimbleModBlocks.UME_EGG.get().asItem());
 			tabData.accept(BimbleModItems.SUSUWATARI_SPAWN_EGG.get());
 			tabData.accept(BimbleModItems.BOWL_OF_SOOT.get());
+			tabData.accept(BimbleModItems.COCONUTTER_SPAWN_EGG.get());
 		}
 
 		if (tabData.getTabKey() == CreativeModeTabs.TOOLS_AND_UTILITIES) {

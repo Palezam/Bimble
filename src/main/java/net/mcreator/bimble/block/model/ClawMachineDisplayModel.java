@@ -1,11 +1,5 @@
 package net.mcreator.bimble.block.model;
 
-import software.bernie.geckolib.model.GeoModel;
-
-import net.minecraft.resources.ResourceLocation;
-
-import net.mcreator.bimble.block.display.ClawMachineDisplayItem;
-
 public class ClawMachineDisplayModel extends GeoModel<ClawMachineDisplayItem> {
 	@Override
 	public ResourceLocation getAnimationResource(ClawMachineDisplayItem animatable) {
