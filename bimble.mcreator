@@ -24,8 +24,8 @@
       "registry_name": "catalog_console",
       "metadata": {
         "files": [
-          "src/main/java/net/mcreator/bimble/item/CatalogConsoleItem.java",
-          "src/main/resources/assets/bimble/models/item/catalog_console.json"
+          "src/main/resources/assets/bimble/models/item/catalog_console.json",
+          "src/main/java/net/mcreator/bimble/item/CatalogConsoleItem.java"
         ]
       }
     },
@@ -38,8 +38,8 @@
       "registry_name": "store",
       "metadata": {
         "files": [
-          "src/main/java/net/mcreator/bimble/client/gui/StoreScreen.java",
           "src/main/java/net/mcreator/bimble/network/StoreButtonMessage.java",
+          "src/main/java/net/mcreator/bimble/client/gui/StoreScreen.java",
           "src/main/java/net/mcreator/bimble/world/inventory/StoreMenu.java"
         ]
       }
@@ -274,11 +274,11 @@
       "registry_name": "ume_egg",
       "metadata": {
         "files": [
-          "src/main/resources/assets/bimble/models/block/ume_egg.json",
+          "src/main/java/net/mcreator/bimble/block/UmeEggBlock.java",
+          "src/main/resources/assets/bimble/models/item/ume_egg.json",
           "src/main/java/net/mcreator/bimble/block/entity/UmeEggBlockEntity.java",
           "src/main/resources/assets/bimble/blockstates/ume_egg.json",
-          "src/main/java/net/mcreator/bimble/block/UmeEggBlock.java",
-          "src/main/resources/assets/bimble/models/item/ume_egg.json"
+          "src/main/resources/assets/bimble/models/block/ume_egg.json"
         ]
       }
     },
@@ -291,8 +291,8 @@
       "registry_name": "star_candy",
       "metadata": {
         "files": [
-          "src/main/resources/assets/bimble/models/item/star_candy.json",
-          "src/main/java/net/mcreator/bimble/item/StarCandyItem.java"
+          "src/main/java/net/mcreator/bimble/item/StarCandyItem.java",
+          "src/main/resources/assets/bimble/models/item/star_candy.json"
         ]
       }
     },
@@ -434,8 +434,8 @@
       "registry_name": "shotgun_shell",
       "metadata": {
         "files": [
-          "src/main/java/net/mcreator/bimble/item/ShotgunShellItem.java",
-          "src/main/resources/assets/bimble/models/item/shotgun_shell.json"
+          "src/main/resources/assets/bimble/models/item/shotgun_shell.json",
+          "src/main/java/net/mcreator/bimble/item/ShotgunShellItem.java"
         ]
       }
     },
@@ -570,9 +570,9 @@
       "registry_name": "double_barrel_bullets",
       "metadata": {
         "files": [
-          "src/main/resources/assets/bimble/models/item/double_barrel_bullets.json",
           "src/main/java/net/mcreator/bimble/item/DoubleBarrelBulletsItem.java",
-          "src/main/java/net/mcreator/bimble/entity/DoubleBarrelBulletsEntity.java"
+          "src/main/java/net/mcreator/bimble/entity/DoubleBarrelBulletsEntity.java",
+          "src/main/resources/assets/bimble/models/item/double_barrel_bullets.json"
         ]
       }
     },
@@ -661,8 +661,8 @@
       "registry_name": "bowl_of_soot",
       "metadata": {
         "files": [
-          "src/main/resources/assets/bimble/models/item/bowl_of_soot.json",
-          "src/main/java/net/mcreator/bimble/item/BowlOfSootItem.java"
+          "src/main/java/net/mcreator/bimble/item/BowlOfSootItem.java",
+          "src/main/resources/assets/bimble/models/item/bowl_of_soot.json"
         ]
       }
     },
@@ -749,16 +749,16 @@
       "registry_name": "recycler",
       "metadata": {
         "files": [
-          "src/main/resources/assets/bimble/models/custom/recycler_particle.json",
           "src/main/resources/assets/bimble/blockstates/recycler.json",
-          "src/main/java/net/mcreator/bimble/block/RecyclerBlock.java",
-          "src/main/resources/assets/bimble/models/item/recycler.json",
+          "src/main/resources/assets/bimble/models/custom/recycler_particle.json",
+          "src/main/java/net/mcreator/bimble/block/renderer/RecyclerTileRenderer.java",
           "src/main/java/net/mcreator/bimble/block/model/RecyclerDisplayModel.java",
-          "src/main/java/net/mcreator/bimble/block/entity/RecyclerTileEntity.java",
           "src/main/java/net/mcreator/bimble/block/display/RecyclerDisplayItem.java",
           "src/main/java/net/mcreator/bimble/block/model/RecyclerBlockModel.java",
+          "src/main/java/net/mcreator/bimble/block/entity/RecyclerTileEntity.java",
           "src/main/java/net/mcreator/bimble/block/renderer/RecyclerDisplayItemRenderer.java",
-          "src/main/java/net/mcreator/bimble/block/renderer/RecyclerTileRenderer.java"
+          "src/main/resources/assets/bimble/models/item/recycler.json",
+          "src/main/java/net/mcreator/bimble/block/RecyclerBlock.java"
         ]
       }
     },
@@ -1283,20 +1283,6 @@
       }
     },
     {
-      "name": "ClawMachineOnBlockRightClicked",
-      "type": "procedure",
-      "sortid": 80,
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "claw_machine_on_block_right_clicked",
-      "metadata": {
-        "files": [
-          "src/main/java/net/mcreator/bimble/procedures/ClawMachineOnBlockRightClickedProcedure.java"
-        ],
-        "dependencies": []
-      }
-    },
-    {
       "name": "ClawMachineGui",
       "type": "gui",
       "sortid": 81,
@@ -1455,11 +1441,14 @@
       "gui.bimble.ammo_count_double_barrel.label_12": "1/2",
       "item.bimble.double_barrel_bullets": "Double Barrel Bullets",
       "gui.bimble.store.label_1x_double_barrel": "1x Double Barrel (64x Solari)",
+      "item.bimble.coconutter_spawn_egg": "Coconutter Spawn Egg",
       "key.bimble.double_barrel_reload": "Double Barrel Reload",
       "gui.bimble.store.button_buy1": "Buy",
+      "gui.bimble.claw_machine_gui.button_play_20_solari": "Play (20 Solari)",
       "item.bimble.drone_spawn_egg": "Delivery Drone Spawn Egg",
       "subtitles.thankyouforyourservice": "Drone speaker",
       "item.bimble.star_candy": "Kompeitō",
+      "entity.bimble.coconutter": "Coconutter",
       "subtitles.bimblethanksyou": "Drone speaker",
       "item.bimble.susuwatari_spawn_egg": "Susuwatari Spawn Egg",
       "block.bimble.recycler": "Recycler",
@@ -1467,6 +1456,7 @@
       "gui.bimble.catalog.button_store": "Store",
       "subtitles.it_is_said_to_lure_creatures": "Drone speaker",
       "item.bimble.shotgun_shell": "Shotgun Shell",
+      "block.bimble.claw_machine": "Claw Machine",
       "item.bimble.catalog_console": "Catalog Console",
       "subtitles.dronedeliver": "Drone wirs",
       "entity.bimble.drone": "Delivery Drone",
