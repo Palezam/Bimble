@@ -74,7 +74,7 @@ public class RecyclerEntityCollidesInTheBlockProcedure {
 						world.setBlock(_pos, _bs.setValue(_integerProp, _value), 3);
 				}
 				if (!world.isClientSide() && world.getServer() != null)
-					world.getServer().getPlayerList().broadcastSystemMessage(Component.literal("Oak Log"), false);
+					world.getServer().getPlayerList().broadcastSystemMessage(Component.literal("Raw Iron"), false);
 				if (!entity.level().isClientSide())
 					entity.discard();
 				for (int index1 = 0; index1 < (int) amount; index1++) {
@@ -104,7 +104,7 @@ public class RecyclerEntityCollidesInTheBlockProcedure {
 						world.setBlock(_pos, _bs.setValue(_integerProp, _value), 3);
 				}
 				if (!world.isClientSide() && world.getServer() != null)
-					world.getServer().getPlayerList().broadcastSystemMessage(Component.literal("Raw Iron"), false);
+					world.getServer().getPlayerList().broadcastSystemMessage(Component.literal("Iron Ingot"), false);
 				if (!entity.level().isClientSide())
 					entity.discard();
 				for (int index2 = 0; index2 < (int) amount; index2++) {

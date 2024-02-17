@@ -12,6 +12,7 @@ import net.minecraftforge.api.distmarker.Dist;
 import net.minecraft.client.gui.screens.MenuScreens;
 
 import net.mcreator.bimble.client.gui.StoreScreen;
+import net.mcreator.bimble.client.gui.ClawMachineGuiScreen;
 import net.mcreator.bimble.client.gui.CatalogScreen;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
@@ -21,6 +22,7 @@ public class BimbleModScreens {
 		event.enqueueWork(() -> {
 			MenuScreens.register(BimbleModMenus.CATALOG.get(), CatalogScreen::new);
 			MenuScreens.register(BimbleModMenus.STORE.get(), StoreScreen::new);
+			MenuScreens.register(BimbleModMenus.CLAW_MACHINE_GUI.get(), ClawMachineGuiScreen::new);
 		});
 	}
 }

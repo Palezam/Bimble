@@ -26,6 +26,10 @@ public class BimbleModTabs {
 			tabData.accept(BimbleModBlocks.RECYCLER.get().asItem());
 		}
 
+		if (tabData.getTabKey() == CreativeModeTabs.REDSTONE_BLOCKS) {
+			tabData.accept(BimbleModBlocks.CLAW_MACHINE.get().asItem());
+		}
+
 		if (tabData.getTabKey() == CreativeModeTabs.COMBAT) {
 			tabData.accept(BimbleModItems.SHOTGUN_SHELL.get());
 			tabData.accept(BimbleModItems.DOUBLE_BARREL.get());

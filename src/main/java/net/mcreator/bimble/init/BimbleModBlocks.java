@@ -12,10 +12,12 @@ import net.minecraft.world.level.block.Block;
 
 import net.mcreator.bimble.block.UmeEggBlock;
 import net.mcreator.bimble.block.RecyclerBlock;
+import net.mcreator.bimble.block.ClawMachineBlock;
 import net.mcreator.bimble.BimbleMod;
 
 public class BimbleModBlocks {
 	public static final DeferredRegister<Block> REGISTRY = DeferredRegister.create(ForgeRegistries.BLOCKS, BimbleMod.MODID);
 	public static final RegistryObject<Block> UME_EGG = REGISTRY.register("ume_egg", () -> new UmeEggBlock());
 	public static final RegistryObject<Block> RECYCLER = REGISTRY.register("recycler", () -> new RecyclerBlock());
+	public static final RegistryObject<Block> CLAW_MACHINE = REGISTRY.register("claw_machine", () -> new ClawMachineBlock());
 }

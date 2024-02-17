@@ -1,0 +1,7 @@
+
+{
+  "parent": "bimble:displaysettings/clawmachine.item",
+  "textures": {
+    "particle": "bimble:block/clawmachientexture2"
+  }
+}

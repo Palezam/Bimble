@@ -8,6 +8,7 @@ import net.minecraftforge.api.distmarker.Dist;
 
 import net.mcreator.bimble.init.BimbleModBlockEntities;
 import net.mcreator.bimble.block.renderer.RecyclerTileRenderer;
+import net.mcreator.bimble.block.renderer.ClawMachineTileRenderer;
 import net.mcreator.bimble.BimbleMod;
 
 @Mod.EventBusSubscriber(modid = BimbleMod.MODID, bus = Mod.EventBusSubscriber.Bus.MOD)
@@ -16,5 +17,6 @@ public class ClientListener {
 	@SubscribeEvent
 	public static void registerRenderers(EntityRenderersEvent.RegisterRenderers event) {
 		event.registerBlockEntityRenderer(BimbleModBlockEntities.RECYCLER.get(), context -> new RecyclerTileRenderer());
+		event.registerBlockEntityRenderer(BimbleModBlockEntities.CLAW_MACHINE.get(), context -> new ClawMachineTileRenderer());
 	}
 }

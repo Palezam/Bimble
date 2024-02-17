@@ -1224,6 +1224,92 @@
           "src/main/resources/data/bimble/advancements/ashesto_ashes.json"
         ]
       }
+    },
+    {
+      "name": "ClawMachine",
+      "type": "animatedblock",
+      "sortid": 79,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "claw_machine",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/bimble/block/entity/ClawMachineTileEntity.java",
+          "src/main/resources/assets/bimble/models/custom/claw_machine_particle.json",
+          "src/main/java/net/mcreator/bimble/block/renderer/ClawMachineTileRenderer.java",
+          "src/main/resources/assets/bimble/blockstates/claw_machine.json",
+          "src/main/java/net/mcreator/bimble/block/model/ClawMachineDisplayModel.java",
+          "src/main/java/net/mcreator/bimble/block/ClawMachineBlock.java",
+          "src/main/java/net/mcreator/bimble/block/model/ClawMachineBlockModel.java",
+          "src/main/resources/assets/bimble/models/item/claw_machine.json",
+          "src/main/java/net/mcreator/bimble/block/display/ClawMachineDisplayItem.java",
+          "src/main/java/net/mcreator/bimble/block/renderer/ClawMachineDisplayItemRenderer.java"
+        ]
+      }
+    },
+    {
+      "name": "ClawMachineOnBlockRightClicked",
+      "type": "procedure",
+      "sortid": 80,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "claw_machine_on_block_right_clicked",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/bimble/procedures/ClawMachineOnBlockRightClickedProcedure.java"
+        ],
+        "dependencies": []
+      }
+    },
+    {
+      "name": "ClawMachineGui",
+      "type": "gui",
+      "sortid": 81,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "claw_machine_gui",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/bimble/world/inventory/ClawMachineGuiMenu.java",
+          "src/main/java/net/mcreator/bimble/client/gui/ClawMachineGuiScreen.java",
+          "src/main/java/net/mcreator/bimble/network/ClawMachineGuiButtonMessage.java"
+        ]
+      }
+    },
+    {
+      "name": "ClawMachinebuttonPress",
+      "type": "procedure",
+      "sortid": 82,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "claw_machinebutton_press",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/bimble/procedures/ClawMachinebuttonPressProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
     }
   ],
   "variable_elements": [
@@ -1355,6 +1441,7 @@
       "gui.bimble.store.label_1x_double_barrel": "1x Double Barrel (64x Solari)",
       "key.bimble.double_barrel_reload": "Double Barrel Reload",
       "gui.bimble.store.button_buy1": "Buy",
+      "gui.bimble.claw_machine_gui.button_play_20_solari": "Play (20 Solari)",
       "item.bimble.drone_spawn_egg": "Delivery Drone Spawn Egg",
       "subtitles.thankyouforyourservice": "Drone speaker",
       "item.bimble.star_candy": "Kompeitō",
@@ -1365,6 +1452,7 @@
       "gui.bimble.catalog.button_store": "Store",
       "subtitles.it_is_said_to_lure_creatures": "Drone speaker",
       "item.bimble.shotgun_shell": "Shotgun Shell",
+      "block.bimble.claw_machine": "Claw Machine",
       "item.bimble.catalog_console": "Catalog Console",
       "subtitles.dronedeliver": "Drone wirs",
       "entity.bimble.drone": "Delivery Drone",

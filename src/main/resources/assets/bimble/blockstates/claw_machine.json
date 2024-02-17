@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "bimble:custom/claw_machine_particle"
+    }
+  }
+}
