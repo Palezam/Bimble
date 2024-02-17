@@ -1,0 +1,12 @@
+{
+  "mappings": {
+    "default": {
+      "map": {},
+      "name": "default"
+    },
+    "coconutter_texture": {
+      "map": {},
+      "name": "coconutter_texture"
+    }
+  }
+}

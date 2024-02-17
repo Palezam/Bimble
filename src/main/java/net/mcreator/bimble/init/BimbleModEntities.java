@@ -19,6 +19,7 @@ import net.minecraft.world.entity.Entity;
 import net.mcreator.bimble.entity.SusuwatariEntity;
 import net.mcreator.bimble.entity.DroneEntity;
 import net.mcreator.bimble.entity.DoubleBarrelBulletsEntity;
+import net.mcreator.bimble.entity.CoconutterEntity;
 import net.mcreator.bimble.BimbleMod;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
@@ -34,6 +35,10 @@ public class BimbleModEntities {
 			EntityType.Builder.<SusuwatariEntity>of(SusuwatariEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(SusuwatariEntity::new)
 
 					.sized(3f, 3f));
+	public static final RegistryObject<EntityType<CoconutterEntity>> COCONUTTER = register("coconutter",
+			EntityType.Builder.<CoconutterEntity>of(CoconutterEntity::new, MobCategory.CREATURE).setShouldReceiveVelocityUpdates(true).setTrackingRange(100).setUpdateInterval(3).setCustomClientFactory(CoconutterEntity::new)
+
+					.sized(0.6f, 1f));
 
 	private static <T extends Entity> RegistryObject<EntityType<T>> register(String registryname, EntityType.Builder<T> entityTypeBuilder) {
 		return REGISTRY.register(registryname, () -> (EntityType<T>) entityTypeBuilder.build(registryname));
@@ -44,6 +49,7 @@ public class BimbleModEntities {
 		event.enqueueWork(() -> {
 			DroneEntity.init();
 			SusuwatariEntity.init();
+			CoconutterEntity.init();
 		});
 	}
 
@@ -51,5 +57,6 @@ public class BimbleModEntities {
 	public static void registerAttributes(EntityAttributeCreationEvent event) {
 		event.put(DRONE.get(), DroneEntity.createAttributes().build());
 		event.put(SUSUWATARI.get(), SusuwatariEntity.createAttributes().build());
+		event.put(COCONUTTER.get(), CoconutterEntity.createAttributes().build());
 	}
 }

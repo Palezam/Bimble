@@ -1224,6 +1224,22 @@
           "src/main/resources/data/bimble/advancements/ashesto_ashes.json"
         ]
       }
+    },
+    {
+      "name": "Coconutter",
+      "type": "animatedentity",
+      "sortid": 79,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "coconutter",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/bimble/entity/model/CoconutterModel.java",
+          "src/main/resources/assets/bimble/models/item/coconutter_spawn_egg.json",
+          "src/main/java/net/mcreator/bimble/client/renderer/CoconutterRenderer.java",
+          "src/main/java/net/mcreator/bimble/entity/CoconutterEntity.java"
+        ]
+      }
     }
   ],
   "variable_elements": [
@@ -1353,11 +1369,13 @@
       "gui.bimble.ammo_count_double_barrel.label_12": "1/2",
       "item.bimble.double_barrel_bullets": "Double Barrel Bullets",
       "gui.bimble.store.label_1x_double_barrel": "1x Double Barrel (64x Solari)",
+      "item.bimble.coconutter_spawn_egg": "Coconutter Spawn Egg",
       "key.bimble.double_barrel_reload": "Double Barrel Reload",
       "gui.bimble.store.button_buy1": "Buy",
       "item.bimble.drone_spawn_egg": "Delivery Drone Spawn Egg",
       "subtitles.thankyouforyourservice": "Drone speaker",
       "item.bimble.star_candy": "Kompeitō",
+      "entity.bimble.coconutter": "Coconutter",
       "subtitles.bimblethanksyou": "Drone speaker",
       "item.bimble.susuwatari_spawn_egg": "Susuwatari Spawn Egg",
       "block.bimble.recycler": "Recycler",
