@@ -15,11 +15,10 @@ import net.minecraftforge.network.PlayMessages;
 import net.minecraftforge.network.NetworkHooks;
 import net.minecraftforge.common.DungeonHooks;
 
-import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.monster.Monster;
+import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
 import net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal;
 import net.minecraft.world.entity.ai.goal.RandomStrollGoal;
 import net.minecraft.world.entity.ai.goal.RandomLookAroundGoal;
@@ -37,8 +36,6 @@ import net.minecraft.world.entity.EntityDimensions;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.damagesource.DamageTypes;
 import net.minecraft.world.damagesource.DamageSource;
-import net.minecraft.world.InteractionResult;
-import net.minecraft.world.InteractionHand;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.network.syncher.SynchedEntityData;
@@ -47,6 +44,8 @@ import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.protocol.game.ClientGamePacketListener;
 import net.minecraft.network.protocol.Packet;
 
+import net.mcreator.bimble.procedures.PlayerTargetConditionProcedure;
+import net.mcreator.bimble.procedures.CoconutterOnEntityTickUpdateProcedure;
 import net.mcreator.bimble.init.BimbleModEntities;
 
 public class CoconutterEntity extends Monster implements GeoEntity {
@@ -101,10 +100,31 @@ public class CoconutterEntity extends Monster implements GeoEntity {
 			}
 		});
 		this.goalSelector.addGoal(2, new RandomStrollGoal(this, 1));
-		this.targetSelector.addGoal(3, new HurtByTargetGoal(this).setAlertOthers());
-		this.goalSelector.addGoal(4, new RandomLookAroundGoal(this));
-		this.goalSelector.addGoal(5, new FloatGoal(this));
-		this.goalSelector.addGoal(6, new BreakDoorGoal(this, e -> true));
+		this.targetSelector.addGoal(3, new NearestAttackableTargetGoal(this, Player.class, false, true) {
+			@Override
+			public boolean canUse() {
+				double x = CoconutterEntity.this.getX();
+				double y = CoconutterEntity.this.getY();
+				double z = CoconutterEntity.this.getZ();
+				Entity entity = CoconutterEntity.this;
+				Level world = CoconutterEntity.this.level();
+				return super.canUse() && PlayerTargetConditionProcedure.execute(entity);
+			}
+
+			@Override
+			public boolean canContinueToUse() {
+				double x = CoconutterEntity.this.getX();
+				double y = CoconutterEntity.this.getY();
+				double z = CoconutterEntity.this.getZ();
+				Entity entity = CoconutterEntity.this;
+				Level world = CoconutterEntity.this.level();
+				return super.canContinueToUse() && PlayerTargetConditionProcedure.execute(entity);
+			}
+		});
+		this.targetSelector.addGoal(4, new HurtByTargetGoal(this).setAlertOthers());
+		this.goalSelector.addGoal(5, new RandomLookAroundGoal(this));
+		this.goalSelector.addGoal(6, new FloatGoal(this));
+		this.goalSelector.addGoal(7, new BreakDoorGoal(this, e -> true));
 	}
 
 	@Override
@@ -140,54 +160,15 @@ public class CoconutterEntity extends Monster implements GeoEntity {
 	}
 
 	@Override
-	public InteractionResult mobInteract(Player sourceentity, InteractionHand hand) {
-		ItemStack itemstack = sourceentity.getItemInHand(hand);
-		InteractionResult retval = InteractionResult.sidedSuccess(this.level().isClientSide());
-		super.mobInteract(sourceentity, hand);
-		sourceentity.startRiding(this);
-		return retval;
-	}
-
-	@Override
 	public void baseTick() {
 		super.baseTick();
+		CoconutterOnEntityTickUpdateProcedure.execute(this.level(), this);
 		this.refreshDimensions();
 	}
 
 	@Override
 	public EntityDimensions getDimensions(Pose p_33597_) {
 		return super.getDimensions(p_33597_).scale((float) 1);
-	}
-
-	@Override
-	public void travel(Vec3 dir) {
-		Entity entity = this.getPassengers().isEmpty() ? null : (Entity) this.getPassengers().get(0);
-		if (this.isVehicle()) {
-			this.setYRot(entity.getYRot());
-			this.yRotO = this.getYRot();
-			this.setXRot(entity.getXRot() * 0.5F);
-			this.setRot(this.getYRot(), this.getXRot());
-			this.yBodyRot = entity.getYRot();
-			this.yHeadRot = entity.getYRot();
-			this.setMaxUpStep(1.0F);
-			if (entity instanceof LivingEntity passenger) {
-				this.setSpeed((float) this.getAttributeValue(Attributes.MOVEMENT_SPEED));
-				float forward = passenger.zza;
-				float strafe = passenger.xxa;
-				super.travel(new Vec3(strafe, 0, forward));
-			}
-			double d1 = this.getX() - this.xo;
-			double d0 = this.getZ() - this.zo;
-			float f1 = (float) Math.sqrt(d1 * d1 + d0 * d0) * 4;
-			if (f1 > 1.0F)
-				f1 = 1.0F;
-			this.walkAnimation.setSpeed(this.walkAnimation.speed() + (f1 - this.walkAnimation.speed()) * 0.4F);
-			this.walkAnimation.position(this.walkAnimation.position() + this.walkAnimation.speed());
-			this.calculateEntityAnimation(true);
-			return;
-		}
-		this.setMaxUpStep(0.5F);
-		super.travel(dir);
 	}
 
 	public static void init() {

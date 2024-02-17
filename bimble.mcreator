@@ -1312,6 +1312,49 @@
           "src/main/java/net/mcreator/bimble/entity/CoconutterEntity.java"
         ]
       }
+    },
+    {
+      "name": "PlayerTargetCondition",
+      "type": "procedure",
+      "sortid": 83,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "player_target_condition",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/mcreator/bimble/procedures/PlayerTargetConditionProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "CoconutterOnEntityTickUpdate",
+      "type": "procedure",
+      "sortid": 84,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "coconutter_on_entity_tick_update",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/bimble/procedures/CoconutterOnEntityTickUpdateProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
     }
   ],
   "variable_elements": [
