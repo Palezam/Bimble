@@ -135,6 +135,22 @@
           "x": 141,
           "y": 81
         }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_proc_return_solari_value",
+          "text": {
+            "fixedValue": "",
+            "name": "ReturnSolariValue"
+          },
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "x": 87,
+          "y": 176
+        }
       }
     ],
     "gridSettings": {

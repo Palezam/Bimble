@@ -23,4 +23,6 @@ public class BimbleModSounds {
 	public static final RegistryObject<SoundEvent> RIPANDTEAR = REGISTRY.register("ripandtear", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("bimble", "ripandtear")));
 	public static final RegistryObject<SoundEvent> IT_IS_SAID_TO_LURE_CREATURES = REGISTRY.register("it_is_said_to_lure_creatures", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("bimble", "it_is_said_to_lure_creatures")));
 	public static final RegistryObject<SoundEvent> THANKYOUFORYOURSERVICE = REGISTRY.register("thankyouforyourservice", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("bimble", "thankyouforyourservice")));
+	public static final RegistryObject<SoundEvent> COCONUT_THROW = REGISTRY.register("coconut.throw", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("bimble", "coconut.throw")));
+	public static final RegistryObject<SoundEvent> ROOMBAVACCUM = REGISTRY.register("roombavaccum", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("bimble", "roombavaccum")));
 }

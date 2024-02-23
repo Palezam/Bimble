@@ -1355,6 +1355,181 @@
           }
         ]
       }
+    },
+    {
+      "name": "CoconutRangedItem",
+      "type": "rangeditem",
+      "sortid": 86,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "coconut",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/bimble/item/CoconutRangedItemItem.java",
+          "src/main/java/net/mcreator/bimble/entity/CoconutRangedItemEntity.java",
+          "src/main/resources/assets/bimble/models/item/coconut.json"
+        ]
+      }
+    },
+    {
+      "name": "CoconutterWanderCondition",
+      "type": "procedure",
+      "sortid": 87,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "coconutter_wander_condition",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/mcreator/bimble/procedures/CoconutterWanderConditionProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "CoconutRangedItemRangedItemUsed",
+      "type": "procedure",
+      "sortid": 88,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "coconut_ranged_item_ranged_item_used",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/bimble/procedures/CoconutRangedItemRangedItemUsedProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "ReturnSolariValue",
+      "type": "procedure",
+      "sortid": 89,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "return_solari_value",
+      "metadata": {
+        "return_type": "string",
+        "files": [
+          "src/main/java/net/mcreator/bimble/procedures/ReturnSolariValueProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/DateDisplayConditons"
+    },
+    {
+      "name": "RoombaGui",
+      "type": "gui",
+      "sortid": 90,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "roomba_gui",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/bimble/world/inventory/RoombaGuiMenu.java",
+          "src/main/java/net/mcreator/bimble/client/gui/RoombaGuiScreen.java"
+        ]
+      }
+    },
+    {
+      "name": "Roomba",
+      "type": "animatedentity",
+      "sortid": 91,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "roomba",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/bimble/entity/model/RoombaModel.java",
+          "src/main/resources/assets/bimble/models/item/roomba_spawn_egg.json",
+          "src/main/java/net/mcreator/bimble/client/renderer/RoombaRenderer.java",
+          "src/main/java/net/mcreator/bimble/entity/RoombaEntity.java",
+          "src/main/resources/data/bimble/forge/biome_modifier/roomba_biome_modifier.json"
+        ]
+      }
+    },
+    {
+      "name": "RoombaOnEntityTickUpdate",
+      "type": "procedure",
+      "sortid": 92,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "roomba_on_entity_tick_update",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/bimble/procedures/RoombaOnEntityTickUpdateProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Test",
+      "type": "procedure",
+      "sortid": 93,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "test",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/bimble/procedures/TestProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "dimension",
+            "type": "dimensiontype"
+          },
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Test2",
+      "type": "procedure",
+      "sortid": 94,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "test_2",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/bimble/procedures/Test2Procedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
     }
   ],
   "variable_elements": [
@@ -1405,6 +1580,12 @@
       "type": "number",
       "scope": "player_persistent",
       "value": "0"
+    },
+    {
+      "name": "PlayerVisitedEnd",
+      "type": "logic",
+      "scope": "player_persistent",
+      "value": "false"
     }
   ],
   "sound_elements": [
@@ -1463,12 +1644,29 @@
       ],
       "category": "neutral",
       "subtitle": "Drone speaker"
+    },
+    {
+      "name": "coconut.throw",
+      "files": [
+        "coconut.throw"
+      ],
+      "category": "player",
+      "subtitle": "Coconut thrown."
+    },
+    {
+      "name": "roombavaccum",
+      "files": [
+        "vacuum_sound_effect"
+      ],
+      "category": "neutral",
+      "subtitle": "Roomba Vaccum"
     }
   ],
   "language_map": {
     "en_us": {
       "item.bimble.double_barrel": "Double Barrel",
       "gui.bimble.catalog.button_calender": "Calender",
+      "subtitles.coconut.throw": "Coconut thrown.",
       "key.category.bimble": "Bimble",
       "advancements.ashesto_ashes.descr": "Lure your first SUSuwatari out with candy.",
       "advancements.ashesto_ashes.title": "Soot to Soot",
@@ -1477,6 +1675,7 @@
       "subtitles.thecompanythanksyouforyourservice": "Drone speaker",
       "item.bimble.bowl_of_soot": "Bowl of Soot",
       "gui.bimble.store.label_apple": "32x Kompeitō (6x Solari)",
+      "item.bimble.roomba_spawn_egg": "Roomba Spawn Egg",
       "gui.bimble.catalog.label_what_will_it_be_today": "What will it be today?",
       "block.bimble.ume_egg": "Ume Egg",
       "gui.bimble.store.button_buy": "Buy",
@@ -1487,6 +1686,7 @@
       "item.bimble.coconutter_spawn_egg": "Coconutter Spawn Egg",
       "key.bimble.double_barrel_reload": "Double Barrel Reload",
       "gui.bimble.store.button_buy1": "Buy",
+      "entity.bimble.roomba": "Roomba",
       "gui.bimble.claw_machine_gui.button_play_20_solari": "Play (20 Solari)",
       "item.bimble.drone_spawn_egg": "Delivery Drone Spawn Egg",
       "subtitles.thankyouforyourservice": "Drone speaker",
@@ -1495,6 +1695,7 @@
       "subtitles.bimblethanksyou": "Drone speaker",
       "item.bimble.susuwatari_spawn_egg": "Susuwatari Spawn Egg",
       "block.bimble.recycler": "Recycler",
+      "gui.bimble.roomba_gui.label_roomba": "Roomba",
       "subtitles.enjoy_your_gun": "Drone speaker",
       "gui.bimble.catalog.button_store": "Store",
       "subtitles.it_is_said_to_lure_creatures": "Drone speaker",
@@ -1503,7 +1704,9 @@
       "item.bimble.catalog_console": "Catalog Console",
       "subtitles.dronedeliver": "Drone wirs",
       "entity.bimble.drone": "Delivery Drone",
+      "subtitles.roombavaccum": "Roomba Vaccum",
       "gui.bimble.ammo_count_double_barrel.label_22": "2/2",
+      "item.bimble.coconut": "Coconut",
       "gui.bimble.ammo_count_double_barrel.label_02": "0/2"
     }
   },

@@ -15,6 +15,7 @@ import net.mcreator.bimble.procedures.TuesdayDisplayProcedure;
 import net.mcreator.bimble.procedures.ThursdayDisplayProcedure;
 import net.mcreator.bimble.procedures.SundayDisplayProcedure;
 import net.mcreator.bimble.procedures.SaturdayDisplayProcedure;
+import net.mcreator.bimble.procedures.ReturnSolariValueProcedure;
 import net.mcreator.bimble.procedures.MondayDisplayProcedure;
 import net.mcreator.bimble.procedures.FridayDisplayProcedure;
 import net.mcreator.bimble.network.CatalogButtonMessage;
@@ -102,6 +103,9 @@ public class CatalogScreen extends AbstractContainerScreen<CatalogMenu> {
 
 	@Override
 	protected void renderLabels(GuiGraphics guiGraphics, int mouseX, int mouseY) {
+		guiGraphics.drawString(this.font,
+
+				ReturnSolariValueProcedure.execute(entity), -38, 119, -12829636, false);
 	}
 
 	@Override

@@ -76,7 +76,7 @@ public class SootGuyRightClickedProcedure {
 			}
 			saveditem.getOrCreateTag().putDouble("savedhealth", (entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1));
 			if (!(entity.getDisplayName().getString()).equals("Susuwatari")) {
-				saveditem.setHoverName(Component.literal(("Bowl of " + entity.getDisplayName().getString())));
+				saveditem.setHoverName(Component.literal(("\u00A7fBowl of " + entity.getDisplayName().getString())));
 				saveditem.getOrCreateTag().putString("savedname", (entity.getDisplayName().getString()));
 			}
 			if (entity.getPersistentData().getBoolean("HasCoal") == true) {

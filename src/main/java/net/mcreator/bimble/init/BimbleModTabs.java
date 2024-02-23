@@ -41,6 +41,11 @@ public class BimbleModTabs {
 			tabData.accept(BimbleModItems.SUSUWATARI_SPAWN_EGG.get());
 			tabData.accept(BimbleModItems.BOWL_OF_SOOT.get());
 			tabData.accept(BimbleModItems.COCONUTTER_SPAWN_EGG.get());
+			tabData.accept(BimbleModItems.ROOMBA_SPAWN_EGG.get());
+		}
+
+		if (tabData.getTabKey() == CreativeModeTabs.INGREDIENTS) {
+			tabData.accept(BimbleModItems.COCONUT.get());
 		}
 
 		if (tabData.getTabKey() == CreativeModeTabs.TOOLS_AND_UTILITIES) {

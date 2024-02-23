@@ -12,6 +12,7 @@ import net.minecraftforge.api.distmarker.Dist;
 import net.minecraft.client.gui.screens.MenuScreens;
 
 import net.mcreator.bimble.client.gui.StoreScreen;
+import net.mcreator.bimble.client.gui.RoombaGuiScreen;
 import net.mcreator.bimble.client.gui.ClawMachineGuiScreen;
 import net.mcreator.bimble.client.gui.CatalogScreen;
 
@@ -23,6 +24,7 @@ public class BimbleModScreens {
 			MenuScreens.register(BimbleModMenus.CATALOG.get(), CatalogScreen::new);
 			MenuScreens.register(BimbleModMenus.STORE.get(), StoreScreen::new);
 			MenuScreens.register(BimbleModMenus.CLAW_MACHINE_GUI.get(), ClawMachineGuiScreen::new);
+			MenuScreens.register(BimbleModMenus.ROOMBA_GUI.get(), RoombaGuiScreen::new);
 		});
 	}
 }

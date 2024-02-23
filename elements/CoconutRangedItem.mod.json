@@ -1,0 +1,40 @@
+{
+  "_fv": 47,
+  "_type": "rangeditem",
+  "definition": {
+    "renderType": 0,
+    "texture": "coconut",
+    "customModelName": "Normal",
+    "name": "Coconut",
+    "specialInfo": [],
+    "creativeTab": {
+      "value": "MATERIALS"
+    },
+    "stackSize": 16,
+    "ammoItem": {
+      "value": "CUSTOM:CoconutRangedItem"
+    },
+    "shootConstantly": true,
+    "usageCount": 0,
+    "actionSound": {
+      "value": ""
+    },
+    "hasGlow": false,
+    "animation": "none",
+    "enableMeleeDamage": false,
+    "damageVsEntity": 0.0,
+    "onRangedItemUsed": {
+      "name": "CoconutRangedItemRangedItemUsed"
+    },
+    "bulletPower": 1.0,
+    "bulletDamage": 2.0,
+    "bulletKnockback": 1,
+    "bulletParticles": false,
+    "bulletIgnitesFire": false,
+    "bulletItemTexture": {
+      "value": "CUSTOM:CoconutRangedItem"
+    },
+    "bulletModel": "Default",
+    "customBulletModelTexture": ""
+  }
+}

@@ -61,5 +61,23 @@
         "stream": false
       }
     ]
+  },
+  "coconut.throw": {
+    "subtitle": "subtitles.coconut.throw",
+    "sounds": [
+      {
+        "name": "bimble:coconut.throw",
+        "stream": false
+      }
+    ]
+  },
+  "roombavaccum": {
+    "subtitle": "subtitles.roombavaccum",
+    "sounds": [
+      {
+        "name": "bimble:vacuum_sound_effect",
+        "stream": false
+      }
+    ]
   }
 }

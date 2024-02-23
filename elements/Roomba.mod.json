@@ -2,9 +2,9 @@
   "_fv": 47,
   "_type": "animatedentity",
   "definition": {
-    "mobName": "Coconutter",
+    "mobName": "Roomba",
     "mobLabel": "",
-    "mobModelTexture": "coconutter_texture.png",
+    "mobModelTexture": "roomba.texture.png",
     "mobModelGlowTexture": "",
     "visualScale": {
       "fixedValue": 1.0
@@ -13,12 +13,12 @@
       "fixedValue": 1.0
     },
     "modelWidth": 0.6,
-    "modelHeight": 1.0,
+    "modelHeight": 1.8,
     "modelShadowSize": 0.5,
-    "mountedYOffset": -0.2,
+    "mountedYOffset": 0.0,
     "hasSpawnEgg": true,
     "spawnEggBaseColor": {
-      "value": -6724096,
+      "value": -1,
       "falpha": 0.0
     },
     "spawnEggDotColor": {
@@ -56,13 +56,13 @@
     "knockbackResistance": 0.0,
     "movementSpeed": 0.3,
     "armorBaseValue": 0.0,
-    "trackingRange": 100,
-    "followRange": 50,
+    "trackingRange": 64,
+    "followRange": 16,
     "health": 10,
     "xpAmount": 0,
     "waterMob": false,
     "flyingMob": false,
-    "guiBoundTo": "<NONE>",
+    "guiBoundTo": "RoombaGui",
     "inventorySize": 9,
     "inventoryStackSize": 64,
     "deathTime": 20,
@@ -73,7 +73,7 @@
     "canControlStrafe": false,
     "immuneToFire": false,
     "immuneToArrows": false,
-    "immuneToFallDamage": true,
+    "immuneToFallDamage": false,
     "immuneToCactus": false,
     "immuneToDrowning": false,
     "immuneToLightning": false,
@@ -97,29 +97,29 @@
       "value": "entity.generic.death"
     },
     "stepSound": {
-      "value": ""
+      "value": "CUSTOM:roombavaccum"
     },
     "onMobTickUpdate": {
-      "name": "CoconutterOnEntityTickUpdate"
+      "name": "RoombaOnEntityTickUpdate"
     },
     "hasAI": true,
     "aiBase": "(none)",
-    "aixml": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"aitasks_container\" deletable=\"false\" x=\"40\" y=\"40\"><next><block type=\"attack_on_collide\"><field name=\"speed\">1.2</field><field name=\"longmemory\">FALSE</field><field name=\"condition\">null,null</field><next><block type=\"wander\"><field name=\"speed\">1</field><field name=\"condition\">CoconutterWanderCondition,CoconutterWanderCondition</field><next><block type=\"attack_entity\"><field name=\"insight\">FALSE</field><field name=\"nearby\">TRUE</field><field name=\"entity\">EntityPlayer</field><field name=\"condition\">PlayerTargetCondition,PlayerTargetCondition</field><next><block type=\"attack_action\"><field name=\"callhelp\">TRUE</field><field name=\"condition\">null,null</field><next><block type=\"look_around\"><field name=\"condition\">null,null</field><next><block type=\"swim_in_water\"><field name=\"condition\">null,null</field><next><block type=\"doors_break\"><field name=\"condition\">null,null</field></block></next></block></next></block></next></block></next></block></next></block></next></block></next></block></xml>",
-    "model": "coconutter.geo.json",
+    "aixml": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"aitasks_container\" deletable=\"false\" x=\"40\" y=\"40\"><next><block type=\"wander\"><field name=\"speed\">0.3</field><field name=\"condition\">null,null</field></block></next></block><block type=\"attack_on_collide\" x=\"325\" y=\"254\"><field name=\"speed\">1.2</field><field name=\"longmemory\">FALSE</field><field name=\"condition\">null,null</field><next><block type=\"attack_action\"><field name=\"callhelp\">FALSE</field><field name=\"condition\">null,null</field><next><block type=\"look_around\"><field name=\"condition\">null,null</field><next><block type=\"swim_in_water\"><field name=\"condition\">null,null</field></block></next></block></next></block></next></block></xml>",
+    "model": "roomba.geo.json",
     "groupName": "",
-    "animation1": "coconutter_idle",
-    "animation2": "coconutter_run",
+    "animation1": "roomba_idle",
+    "animation2": "",
     "animation3": "",
-    "animation4": "coconutter_jab",
+    "animation4": "",
     "animation5": "",
     "animation6": "",
     "animation7": "",
     "animation8": "",
     "animation9": "",
     "animation10": "",
-    "enable2": true,
+    "enable2": false,
     "enable3": false,
-    "enable4": true,
+    "enable4": false,
     "enable5": false,
     "enable6": false,
     "enable7": false,
@@ -140,23 +140,13 @@
     "rangedAttackInterval": 20,
     "rangedAttackRadius": 10.0,
     "height": 1.0,
-    "spawnThisMob": false,
-    "doesDespawnWhenIdle": false,
-    "spawningProbability": 14,
-    "mobSpawningType": "creature",
-    "minNumberOfMobsPerGroup": 2,
-    "maxNumberOfMobsPerGroup": 7,
-    "restrictionBiomes": [
-      {
-        "value": "plains"
-      },
-      {
-        "value": "mutated_forest"
-      },
-      {
-        "value": "forest"
-      }
-    ],
-    "spawnInDungeons": true
+    "spawnThisMob": true,
+    "doesDespawnWhenIdle": true,
+    "spawningProbability": 20,
+    "mobSpawningType": "monster",
+    "minNumberOfMobsPerGroup": 4,
+    "maxNumberOfMobsPerGroup": 4,
+    "restrictionBiomes": [],
+    "spawnInDungeons": false
   }
 }

@@ -1,6 +1,7 @@
 {
   "item.bimble.double_barrel": "Double Barrel",
   "gui.bimble.catalog.button_calender": "Calender",
+  "subtitles.coconut.throw": "Coconut thrown.",
   "key.category.bimble": "Bimble",
   "advancements.ashesto_ashes.descr": "Lure your first SUSuwatari out with candy.",
   "advancements.ashesto_ashes.title": "Soot to Soot",
@@ -9,6 +10,7 @@
   "subtitles.thecompanythanksyouforyourservice": "Drone speaker",
   "item.bimble.bowl_of_soot": "Bowl of Soot",
   "gui.bimble.store.label_apple": "32x Kompeitō (6x Solari)",
+  "item.bimble.roomba_spawn_egg": "Roomba Spawn Egg",
   "gui.bimble.catalog.label_what_will_it_be_today": "What will it be today?",
   "block.bimble.ume_egg": "Ume Egg",
   "gui.bimble.store.button_buy": "Buy",
@@ -19,6 +21,7 @@
   "item.bimble.coconutter_spawn_egg": "Coconutter Spawn Egg",
   "key.bimble.double_barrel_reload": "Double Barrel Reload",
   "gui.bimble.store.button_buy1": "Buy",
+  "entity.bimble.roomba": "Roomba",
   "gui.bimble.claw_machine_gui.button_play_20_solari": "Play (20 Solari)",
   "item.bimble.drone_spawn_egg": "Delivery Drone Spawn Egg",
   "subtitles.thankyouforyourservice": "Drone speaker",
@@ -27,6 +30,7 @@
   "subtitles.bimblethanksyou": "Drone speaker",
   "item.bimble.susuwatari_spawn_egg": "Susuwatari Spawn Egg",
   "block.bimble.recycler": "Recycler",
+  "gui.bimble.roomba_gui.label_roomba": "Roomba",
   "subtitles.enjoy_your_gun": "Drone speaker",
   "gui.bimble.catalog.button_store": "Store",
   "subtitles.it_is_said_to_lure_creatures": "Drone speaker",
@@ -35,6 +39,8 @@
   "item.bimble.catalog_console": "Catalog Console",
   "subtitles.dronedeliver": "Drone wirs",
   "entity.bimble.drone": "Delivery Drone",
+  "subtitles.roombavaccum": "Roomba Vaccum",
   "gui.bimble.ammo_count_double_barrel.label_22": "2/2",
+  "item.bimble.coconut": "Coconut",
   "gui.bimble.ammo_count_double_barrel.label_02": "0/2"
 }

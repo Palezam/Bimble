@@ -17,6 +17,7 @@ import net.mcreator.bimble.item.StarCandyItem;
 import net.mcreator.bimble.item.ShotgunShellItem;
 import net.mcreator.bimble.item.DoubleBarrelItem;
 import net.mcreator.bimble.item.DoubleBarrelBulletsItem;
+import net.mcreator.bimble.item.CoconutRangedItemItem;
 import net.mcreator.bimble.item.CatalogConsoleItem;
 import net.mcreator.bimble.item.BowlOfSootItem;
 import net.mcreator.bimble.block.display.RecyclerDisplayItem;
@@ -37,6 +38,8 @@ public class BimbleModItems {
 	public static final RegistryObject<Item> RECYCLER = REGISTRY.register(BimbleModBlocks.RECYCLER.getId().getPath(), () -> new RecyclerDisplayItem(BimbleModBlocks.RECYCLER.get(), new Item.Properties()));
 	public static final RegistryObject<Item> CLAW_MACHINE = REGISTRY.register(BimbleModBlocks.CLAW_MACHINE.getId().getPath(), () -> new ClawMachineDisplayItem(BimbleModBlocks.CLAW_MACHINE.get(), new Item.Properties()));
 	public static final RegistryObject<Item> COCONUTTER_SPAWN_EGG = REGISTRY.register("coconutter_spawn_egg", () -> new ForgeSpawnEggItem(BimbleModEntities.COCONUTTER, -6724096, -1, new Item.Properties()));
+	public static final RegistryObject<Item> COCONUT = REGISTRY.register("coconut", () -> new CoconutRangedItemItem());
+	public static final RegistryObject<Item> ROOMBA_SPAWN_EGG = REGISTRY.register("roomba_spawn_egg", () -> new ForgeSpawnEggItem(BimbleModEntities.ROOMBA, -1, -1, new Item.Properties()));
 
 	private static RegistryObject<Item> block(RegistryObject<Block> block) {
 		return REGISTRY.register(block.getId().getPath(), () -> new BlockItem(block.get(), new Item.Properties()));

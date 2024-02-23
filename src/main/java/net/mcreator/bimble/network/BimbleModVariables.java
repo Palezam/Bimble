@@ -77,6 +77,7 @@ public class BimbleModVariables {
 			clone.DoubleBarrelStore = original.DoubleBarrelStore;
 			clone.Solari = original.Solari;
 			clone.Voiceline = original.Voiceline;
+			clone.PlayerVisitedEnd = original.PlayerVisitedEnd;
 			if (!event.isWasDeath()) {
 			}
 		}
@@ -255,6 +256,7 @@ public class BimbleModVariables {
 		public ItemStack DoubleBarrelStore = ItemStack.EMPTY;
 		public double Solari = 0;
 		public double Voiceline = 0;
+		public boolean PlayerVisitedEnd = false;
 
 		public void syncPlayerVariables(Entity entity) {
 			if (entity instanceof ServerPlayer serverPlayer)
@@ -267,6 +269,7 @@ public class BimbleModVariables {
 			nbt.put("DoubleBarrelStore", DoubleBarrelStore.save(new CompoundTag()));
 			nbt.putDouble("Solari", Solari);
 			nbt.putDouble("Voiceline", Voiceline);
+			nbt.putBoolean("PlayerVisitedEnd", PlayerVisitedEnd);
 			return nbt;
 		}
 
@@ -276,6 +279,7 @@ public class BimbleModVariables {
 			DoubleBarrelStore = ItemStack.of(nbt.getCompound("DoubleBarrelStore"));
 			Solari = nbt.getDouble("Solari");
 			Voiceline = nbt.getDouble("Voiceline");
+			PlayerVisitedEnd = nbt.getBoolean("PlayerVisitedEnd");
 		}
 	}
 
@@ -304,6 +308,7 @@ public class BimbleModVariables {
 					variables.DoubleBarrelStore = message.data.DoubleBarrelStore;
 					variables.Solari = message.data.Solari;
 					variables.Voiceline = message.data.Voiceline;
+					variables.PlayerVisitedEnd = message.data.PlayerVisitedEnd;
 				}
 			});
 			context.setPacketHandled(true);
